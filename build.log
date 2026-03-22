@@ -1,0 +1,49 @@
+
+> temp-app@0.1.0 build
+> next build
+
+  ▲ Next.js 14.2.35
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/23) ...
+   Generating static pages (5/23) 
+   Generating static pages (11/23) 
+   Generating static pages (17/23) 
+ ✓ Generating static pages (23/23)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                                   Size     First Load JS
+┌ ○ /                                                         1.37 kB         103 kB
+├ ○ /_not-found                                               873 B          88.3 kB
+├ ○ /about                                                    1.36 kB        97.4 kB
+├ ƒ /api/contact                                              0 B                0 B
+├ ● /areas/[city]                                             1.36 kB        97.4 kB
+├   ├ /areas/montgomery-village
+├   ├ /areas/gaithersburg
+├   ├ /areas/rockville
+├   └ [+3 more paths]
+├ ○ /blog                                                     1.37 kB         103 kB
+├ ● /blog/[slug]                                              187 B           101 kB
+├   ├ /blog/best-time-to-mow-lawn-montgomery-county-maryland
+├   ├ /blog/push-mower-advantage-better-lawn-cut
+├   └ /blog/how-often-mow-lawn-gaithersburg-md
+├ ○ /contact                                                  5.51 kB         102 kB
+├ ○ /privacy                                                  142 B          87.5 kB
+├ ○ /robots.txt                                               0 B                0 B
+├ ○ /services                                                 50.4 kB         146 kB
+├ ○ /sitemap.xml                                              0 B                0 B
+└ ○ /terms                                                    142 B          87.5 kB
++ First Load JS shared by all                                 87.4 kB
+  ├ chunks/117-4f5b424f20efdcae.js                            31.7 kB
+  ├ chunks/fd9d1056-b11b2651f33aae7f.js                       53.6 kB
+  └ other shared chunks (total)                               2.01 kB
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses getStaticProps)
+ƒ  (Dynamic)  server-rendered on demand
+
