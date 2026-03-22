@@ -3,6 +3,7 @@ import { useState } from 'react'
 
 type Form = {
   name: string
+  email: string
   phone: string
   address: string
   service: string
@@ -11,7 +12,7 @@ type Form = {
 
 export default function ContactPage() {
   const [form, setForm]       = useState<Form>({
-    name:'', phone:'', address:'', service:'', source:''
+    name:'', email:'', phone:'', address:'', service:'', source:''
   })
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
@@ -118,6 +119,18 @@ export default function ContactPage() {
                     <input type="text" required
                       placeholder="Your full name"
                       value={form.name} onChange={set('name')}
+                      className={inp}/>
+                  </div>
+
+                  {/* 2. Email */}
+                  <div>
+                    <label className={lbl}>
+                      Email Address{' '}
+                      <span className="text-red-500">*</span>
+                    </label>
+                    <input type="email" required
+                      placeholder="your@email.com"
+                      value={form.email} onChange={set('email')}
                       className={inp}/>
                   </div>
 
@@ -277,8 +290,8 @@ export default function ContactPage() {
               </h3>
               {([
                 ['✉️','Email',
-                 'contact@primegreenlandscape.com',
-                 'mailto:contact@primegreenlandscape.com'],
+                 'kevin@primegreenlandscape.com',
+                 'mailto:kevin@primegreenlandscape.com'],
                 ['🕐','Hours','Mon–Sat: 7AM – 7PM', null],
                 ['📍','Area','Montgomery County, MD', null],
                 ['💳','Billing','Online via Yardbook', null],

@@ -3,10 +3,10 @@ import { NextResponse } from 'next/server'
 
 export async function POST(req: Request) {
   try {
-    const { name, phone, address, service, source }
+    const { name, email, phone, address, service, source }
       = await req.json()
 
-    if (!name || !phone || !address || !service) {
+    if (!name || !email || !phone || !address || !service) {
       return NextResponse.json(
         { error: 'Missing fields' }, { status: 400 }
       )
@@ -17,7 +17,7 @@ export async function POST(req: Request) {
 
     const { data, error } = await resend.emails.send({
       from: 'Prime Green Website <onboarding@resend.dev>',
-      to: [process.env.CONTACT_EMAIL || 'contact@primegreenlandscape.com'],
+      to: [process.env.CONTACT_EMAIL || 'kevin@primegreenlandscape.com'],
       subject: `🌿 New Quote Request — ${name} | ${service}`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #edf2f7; border-radius: 12px; overflow: hidden;">
@@ -28,6 +28,7 @@ export async function POST(req: Request) {
             <p style="font-size: 16px; margin-bottom: 24px;">You have a new lead from the website contact form.</p>
             <div style="background-color: #f7fafc; border-radius: 8px; padding: 20px; margin-bottom: 24px;">
               <p style="margin: 0 0 10px 0;"><strong>Name:</strong> ${name}</p>
+              <p style="margin: 0 0 10px 0;"><strong>Email:</strong> ${email}</p>
               <p style="margin: 0 0 10px 0;"><strong>Phone:</strong> ${phone}</p>
               <p style="margin: 0 0 10px 0;"><strong>Address:</strong> ${address}</p>
               <p style="margin: 0 0 10px 0;"><strong>Service:</strong> ${service}</p>

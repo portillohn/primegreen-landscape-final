@@ -57,7 +57,7 @@ export default function PrivacyPage() {
           If you have any questions or concerns regarding this Privacy Policy or how your data is handled, please contact us at:
         </p>
         <p>
-          <strong>Email:</strong> contact@primegreenlandscape.com<br />
+          <strong>Email:</strong> kevin@primegreenlandscape.com<br />
           <strong>Phone:</strong> (571) 405-0031
         </p>
       </div>

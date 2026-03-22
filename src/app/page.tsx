@@ -16,7 +16,7 @@ const jsonLd = {
   "description": "Professional residential lawn mowing in Montgomery County, MD using push mowers for superior precision and lawn health.",
   "url": "https://primegreenlandscape.com",
   "telephone": "(571) 405-0031",
-  "email": "contact@primegreenlandscape.com",
+  "email": "kevin@primegreenlandscape.com",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Montgomery Village",
