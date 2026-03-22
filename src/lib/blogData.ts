@@ -104,5 +104,68 @@ At Prime Green Landscape LLC, we understand that weather dictates everything. We
 
 Get started today by requesting a completely free, fast quote through our website.
     `
+  },
+  "best-lawn-care-tips-maryland-homeowners": {
+    slug: "best-lawn-care-tips-maryland-homeowners",
+    title: "10 Best Lawn Care Tips for Maryland Homeowners",
+    date: "May 5, 2025",
+    excerpt: "Master your Maryland curb appeal with these 10 essential tips tailored for the unique climate of Montgomery County.",
+    coverImage: "/images/blog-1.png",
+    content: `
+Maintaining a vibrant lawn in Maryland requires more than just mowing. Our "transition zone" climate presents unique challenges that require a strategic approach. Here are our top 10 tips for local homeowners:
+
+1. **Test Your Soil:** Maryland soils can be acidic. A simple pH test can tell you if you need to apply lime to help your grass absorb nutrients.
+2. **Aerate in the Fall:** Core aeration helps break up the heavy clay soil common in Montgomery County, allowing air and water to reach the roots.
+3. **Overseed with Tall Fescue:** This resilient variety is the gold standard for our region's hot summers and cold winters.
+4. **Mow High:** Set your blades to 3-3.5 inches to shade the soil and discourage weeds.
+5. **Water Deeply, But Infrequently:** Aim for 1 inch of water per week, delivered in 1-2 sessions to encourage deep root growth.
+6. **Fertilize Strategically:** Apply fertilizer in the fall when the grass is focused on root development, rather than top growth.
+7. **Control Weeds Early:** Use pre-emergent in early spring to stop crabgrass before it starts.
+8. **Mulch Your Clippings:** Instead of bagging, leave clippings on the lawn. They act as a natural, nitrogen-rich fertilizer.
+9. **Keep Mower Blades Sharp:** Dull blades tear the grass, making it susceptible to disease.
+10. **Hire Local Professionals:** Sometimes, the best tip is to let the experts handle it. Visit our [contact page](/contact) for a free quote.
+    `
+  },
+  "keep-grass-green-summer-maryland": {
+    slug: "keep-grass-green-summer-maryland",
+    title: "How to Keep Your Grass Green During Maryland Summers",
+    date: "June 12, 2025",
+    excerpt: "Don't let the July heat turn your lawn brown. Learn the secrets to keeping cool-season grass green in 90-degree weather.",
+    coverImage: "/images/blog-2.png",
+    content: `
+When the Maryland summer heat hits 90°F with 90% humidity, cool-season grasses like Tall Fescue often go dormant and turn brown. Here is how to keep them green and resilient:
+
+## Raise the Mower Deck
+Increase your mowing height to the maximum (4 inches if possible). Taller grass blades provide more shade for the soil, keeping the root zone cooler and reducing evaporation.
+
+## Time Your Watering
+Watering at night can lead to fungal issues in our humid climate. The best time is between 4:00 AM and 8:00 AM, allowing the grass to dry off as the sun rises.
+
+## Minimize Traffic
+Dormant or heat-stressed grass is easily damaged by foot traffic or heavy machinery. This is why our [push mower service](/services) is so critical in the summer—we don't crush the soil during the hottest months.
+
+## Skip the Mid-Summer Fertilizer
+Applying high-nitrogen fertilizer in July can actually burn your lawn. Wait until the cooler weather of September to feed your grass.
+
+Need help maintaining your summer lawn? [Request a free quote](/contact) and let us handle the scheduling.
+    `
+  },
+  "spring-yard-cleanup-checklist-montgomery-county": {
+    slug: "spring-yard-cleanup-checklist-montgomery-county",
+    title: "Spring Yard Cleanup Checklist for Montgomery County",
+    date: "March 1, 2025",
+    excerpt: "Get your property ready for the growing season with our comprehensive spring cleanup guide for local MD homeowners.",
+    coverImage: "/images/blog-3.png",
+    content: `
+A beautiful summer lawn starts with a thorough spring cleanup. In Montgomery County, March is the perfect time to tackle these tasks:
+
+- **Debris Removal:** Clear away fallen branches, dead leaves, and winter debris from your lawn and garden beds.
+- **Dethatching:** If your lawn has a thick layer of dead grass, a light raking can help air reach the soil.
+- **Edge Your Beds:** Re-establish clean, crisp lines along your walkways and flower beds.
+- **Apply Pre-Emergent:** Get ahead of crabgrass before the soil temperature hits 55°F.
+- **Check Your Irrigation:** Ensure your hoses and sprinklers are ready for the first dry spell.
+
+Don't have the time? Our [Yard Cleanup Service](/yard-cleanup) can handle the heavy lifting for you.
+    `
   }
 };

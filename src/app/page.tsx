@@ -187,14 +187,14 @@ export default function Home() {
       </section>
 
       {/* SECTION 4 - Services Overview */}
-      <section className="py-16 bg-brand-bg border-y border-gray-200">
+      <section className="py-16 bg-brand-bg border-y border-gray-200 text-center font-inter">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Simple, Transparent Pricing</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-dark mb-4 tracking-tight">Simple, Transparent Pricing</h2>
             <p className="text-lg text-gray-600">No contracts required. Pay after every service via Yardbook online invoice.</p>
           </FadeIn>
 
-          <div className="grid md:grid-cols-3 gap-10 mb-12 mt-10">
+          <div className="grid md:grid-cols-3 gap-10 mb-12 mt-10 text-left">
             {services.map((service, idx) => (
               <FadeIn key={idx} delay={idx * 0.1} className={`relative bg-white rounded-2xl p-8 shadow-md flex flex-col border-2 ${service.popular ? 'border-brand-mid ring-4 ring-brand-mid/5' : 'border-gray-100'}`}>
                 {service.popular && (
@@ -225,10 +225,30 @@ export default function Home() {
             ))}
           </div>
 
-          <FadeIn delay={0.4} className="text-center text-sm text-gray-500 bg-white inline-block mx-auto max-w-2xl px-6 py-4 rounded-xl border border-gray-200 shadow-sm flex flex-col md:flex-row items-center gap-3">
+          <FadeIn delay={0.4} className="text-center text-sm text-gray-500 bg-white inline-block mx-auto max-w-2xl px-6 py-4 rounded-xl border border-gray-200 shadow-sm flex flex-col md:flex-row items-center gap-3 mb-16">
             <span className="text-xl">💳</span>
             <p>We bill through <strong>Yardbook</strong> — you pay securely online by card after each visit. No cash needed. Tips always appreciated! 😊</p>
           </FadeIn>
+
+          <div className="mt-16 text-center">
+            <h2 className="text-3xl font-bold text-brand-dark mb-10 tracking-tight">More Than Just Mowing</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+              {[
+                { name: "Mulching", href: "/mulching" },
+                { name: "Yard Cleanup", href: "/yard-cleanup" },
+                { name: "Weed Removal", href: "/weed-removal" },
+                { name: "Edging & Trimming", href: "/edging-trimming" },
+                { name: "Seasonal Cleanup", href: "/seasonal-cleanup" },
+              ].map((s, i) => (
+                <Link key={i} href={s.href} className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-brand-accent transition-all font-bold text-brand-dark flex flex-col items-center gap-3 group">
+                  <div className="w-10 h-10 bg-brand-bg rounded-lg flex items-center justify-center group-hover:bg-brand-accent group-hover:text-white transition-colors">
+                    <Check className="w-5 h-5" />
+                  </div>
+                  {s.name}
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

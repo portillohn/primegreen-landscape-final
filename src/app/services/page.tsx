@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import FAQAccordion from "@/components/FAQAccordion";
-import { Check, ClipboardList, Home, ShieldCheck, ThumbsUp, Wallet } from "lucide-react";
+import { Check, ClipboardList, Home, ShieldCheck, ThumbsUp, Wallet, ChevronRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Professional Lawn Mowing Services | Prime Green Landscape LLC",
@@ -159,6 +159,28 @@ export default function ServicesPage() {
                 </Link>
               </FadeIn>
             ))}
+          </div>
+
+          <div className="mt-24 text-center">
+            <h2 className="text-3xl font-bold text-brand-dark mb-4">Additional Expert Services</h2>
+            <p className="text-lg text-gray-600 mb-12">Beyond mowing, we offer specialized care to keep your entire property looking its best.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { title: "Mulching", desc: "Eco-friendly mulch application to protect soil and boost appearance.", href: "/mulching" },
+                { title: "Yard Cleanup", desc: "Thorough removal of debris, branches, and overgrowth.", href: "/yard-cleanup" },
+                { title: "Weed Removal", desc: "Detailed manual weeding for garden beds and pathways.", href: "/weed-removal" },
+                { title: "Edging & Trimming", desc: "Precision border definition for a truly professional finish.", href: "/edging-trimming" },
+                { title: "Seasonal Cleanup", desc: "Focused Spring and Fall prep to handle leaves and season transitions.", href: "/seasonal-cleanup" },
+              ].map((s, idx) => (
+                <FadeIn key={idx} delay={idx * 0.1} className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-brand-accent transition-all text-left">
+                  <h3 className="text-xl font-bold text-brand-dark mb-3">{s.title}</h3>
+                  <p className="text-gray-600 mb-6 text-sm leading-relaxed">{s.desc}</p>
+                  <Link href={s.href} className="text-brand-accent font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                    View Details <ChevronRight className="w-4 h-4" />
+                  </Link>
+                </FadeIn>
+              ))}
+            </div>
           </div>
         </div>
       </section>
