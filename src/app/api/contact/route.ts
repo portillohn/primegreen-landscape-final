@@ -16,7 +16,7 @@ export async function POST(req: Request) {
     const resend = new Resend(process.env.RESEND_API_KEY || 're_placeholder')
 
     const { data, error } = await resend.emails.send({
-      from: 'Prime Green Website <onboarding@resend.dev>',
+      from: 'Prime Green Landscape <notifications@primegreenlandscape.com>',
       to: [process.env.CONTACT_EMAIL || 'kevin@primegreenlandscape.com'],
       subject: `🌿 New Quote Request — ${name} | ${service}`,
       html: `

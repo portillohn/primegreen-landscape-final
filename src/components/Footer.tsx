@@ -39,7 +39,7 @@ export default function Footer() {
           </p>
           <div className="mt-5 flex gap-4">
             {/* Facebook */}
-            <a href="https://www.facebook.com/primegreenlandscape"
+            <a href="https://www.facebook.com/PrimeGreenLandscape/"
               target="_blank" rel="noopener noreferrer"
               aria-label="Facebook"
               className="text-green-300 hover:text-white transition-colors">
@@ -48,7 +48,7 @@ export default function Footer() {
               </svg>
             </a>
             {/* Instagram */}
-            <a href="https://www.instagram.com/primegreenlandscape"
+            <a href="https://www.instagram.com/primegreenmoco/"
               target="_blank" rel="noopener noreferrer"
               aria-label="Instagram"
               className="text-green-300 hover:text-white transition-colors">

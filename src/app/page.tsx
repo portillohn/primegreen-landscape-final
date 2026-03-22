@@ -37,8 +37,8 @@ const jsonLd = {
   "priceRange": "$$",
   "openingHours": "Mo-Sa 07:00-19:00",
   "sameAs": [
-    "https://www.facebook.com/primegreenlandscape",
-    "https://www.instagram.com/primegreenlandscape"
+    "https://www.facebook.com/PrimeGreenLandscape/",
+    "https://www.instagram.com/primegreenmoco/"
   ]
 };
 
