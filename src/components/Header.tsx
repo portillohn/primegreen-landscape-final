@@ -20,8 +20,9 @@ export default function Header() {
   
   const areasRef = useRef<HTMLDivElement>(null)
 
+  // We keep the scrolled state for the shadow effect but the background is always white
   useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 60)
+    const fn = () => setScrolled(window.scrollY > 10)
     fn()
     window.addEventListener('scroll', fn)
     return () => window.removeEventListener('scroll', fn)
@@ -39,7 +40,7 @@ export default function Header() {
     return () => document.removeEventListener('mousedown', handler)
   }, [])
 
-  const bg       = scrolled ? 'bg-white shadow-md' : 'bg-transparent'
+  const bg = scrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm' : 'bg-white'
 
   return (
     <>
@@ -66,10 +67,7 @@ export default function Header() {
 
             {/* Services */}
             <Link href="/services"
-              className={`text-sm font-medium transition-colors
-                ${scrolled
-                  ? 'text-gray-700 hover:text-green-700'
-                  : 'text-white hover:text-green-200'}`}>
+              className="text-sm font-medium transition-colors text-gray-700 hover:text-green-700">
               Services
             </Link>
 
@@ -77,11 +75,7 @@ export default function Header() {
             <div className="relative" ref={areasRef}>
               <button
                 onClick={() => setAreasOpen(o => !o)}
-                className={`flex items-center gap-1 text-sm font-medium
-                  transition-colors
-                  ${scrolled
-                    ? 'text-gray-700 hover:text-green-700'
-                    : 'text-white hover:text-green-200'}`}>
+                className="flex items-center gap-1 text-sm font-medium transition-colors text-gray-700 hover:text-green-700">
                 Areas
                 <svg
                   className={`w-4 h-4 transition-transform duration-200
@@ -161,19 +155,13 @@ export default function Header() {
 
             {/* About */}
             <Link href="/about"
-              className={`text-sm font-medium transition-colors
-                ${scrolled
-                  ? 'text-gray-700 hover:text-green-700'
-                  : 'text-white hover:text-green-200'}`}>
+              className="text-sm font-medium transition-colors text-gray-700 hover:text-green-700">
               About
             </Link>
 
             {/* Blog */}
             <Link href="/blog"
-              className={`text-sm font-medium transition-colors
-                ${scrolled
-                  ? 'text-gray-700 hover:text-green-700'
-                  : 'text-white hover:text-green-200'}`}>
+              className="text-sm font-medium transition-colors text-gray-700 hover:text-green-700">
               Blog
             </Link>
 
@@ -183,9 +171,7 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-4">
             <a href="sms:+15714050031?body=Hello%2C%20I%27d%20like%20a%20free%20quote"
               aria-label="Send SMS to (571) 405-0031"
-              className={`text-sm font-semibold transition-colors
-                flex items-center gap-1.5
-                ${scrolled ? 'text-green-800' : 'text-white'}`}>
+              className="text-sm font-semibold transition-colors flex items-center gap-1.5 text-green-800">
               <svg className="w-4 h-4" fill="none" stroke="currentColor"
                 viewBox="0 0 24 24" aria-hidden>
                 <path strokeLinecap="round" strokeLinejoin="round"
@@ -195,19 +181,14 @@ export default function Header() {
               Text Us (571) 405-0031
             </a>
             <Link href="/contact"
-              className={`px-4 py-2 rounded-md text-sm font-semibold
-                transition-all duration-200
-                ${scrolled
-                  ? 'bg-green-600 text-white hover:bg-green-700'
-                  : 'bg-white text-green-800 hover:bg-green-50'}`}>
+              className="px-4 py-2 rounded-md text-sm font-semibold transition-all duration-200 bg-green-600 text-white hover:bg-green-700">
               Get Free Quote
             </Link>
           </div>
 
           {/* Mobile hamburger */}
           <button onClick={() => setMenuOpen(o => !o)}
-            className={`md:hidden p-2 ${scrolled
-              ? 'text-gray-700' : 'text-white'}`}
+            className="md:hidden p-2 text-gray-700"
             aria-label="Menu">
             {menuOpen
               ? <svg className="w-6 h-6" fill="none" stroke="currentColor"
