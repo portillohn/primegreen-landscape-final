@@ -2,87 +2,208 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
-import { Check, MapPin, Star, ShieldCheck, Leaf, Clock, CreditCard, ChevronRight } from "lucide-react";
+import { Check, MapPin, Star, ShieldCheck, Leaf, Clock, CreditCard, ChevronRight, Zap } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Professional Lawn Mowing Services in Montgomery County, MD",
-  description: "Elite residential lawn mowing in Gaithersburg, Rockville, and Montgomery Village. Precision push mower service for a healthier, greener lawn. Free quotes.",
+  title: "Professional Lawn Mowing Services | Montgomery County, MD",
+  description: "Precision push mower lawn mowing in Gaithersburg, Rockville, and Potomac. Elite residential care that protects your soil and boosts curb appeal. Free quotes.",
 };
 
-const faqs = [
-  { question: "How often should my lawn be mowed?", answer: "Weekly mowing is recommended from April to June. During the hot summer months, bi-weekly service is often sufficient." },
-  { question: "Do you use riding mowers?", answer: "No. We exclusively use professional push mowers to prevent soil compaction and provide a superior, high-detail cut." },
-  { question: "What areas do you serve?", answer: "We serve Montgomery Village, Gaithersburg, Rockville, Germantown, Bethesda, and Silver Spring." }
+const benefits = [
+  { 
+    title: "Zero Soil Compaction", 
+    desc: "Heavy 1,000lb riding mowers crush soil and suffocate roots. Our lightweight push mowers protect your lawn's foundation.",
+    icon: Leaf 
+  },
+  { 
+    title: "HOA Precision", 
+    desc: "We deliver the razor-sharp edges and perfect stripes required by Montgomery County's strictest HOA standards.",
+    icon: ShieldCheck 
+  },
+  { 
+    title: "Eco-Friendly Quiet", 
+    desc: "Our high-end equipment is significantly quieter and cleaner than industrial riding machinery.",
+    icon: Zap 
+  }
 ];
+
+const steps = [
+  { title: "Perimeter Check", desc: "We walk the property to remove debris and identify any obstacles or pet areas." },
+  { title: "Precision Cut", desc: "Consistent height adjustment based on your grass type (Tall Fescue focus)." },
+  { title: "String Trimming", desc: "Detail trimming around trees, fences, and ornamental garden beds." },
+  { title: "Mechanical Edging", desc: "Defining crisp vertical lines along all walkways and driveways." },
+  { title: "Clean Sweep", desc: "Full blowdown of all hard surfaces—leaving your property spotless." }
+];
+
+const faqs = [
+  { 
+    question: "How often should my lawn be mowed in Maryland?", 
+    answer: "In our transition zone, we recommend weekly service from April through June. Bi-weekly is often sufficient during the peak heat of July/August if growth slows." 
+  },
+  { 
+    question: "Do you use riding mowers for larger lots?", 
+    answer: "No. We believe in the superior quality of a push mower cut for all residential properties. It allows for better detail and prevents long-term soil damage." 
+  },
+  { 
+    question: "What is your typical mowing height?", 
+    answer: "We typically maintain Tall Fescue at 3.5 to 4 inches. This height promotes deeper root growth and helps the grass crowd out weeds naturally." 
+  }
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Professional Residential Lawn Mowing",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Prime Green Landscape LLC"
+      },
+      "areaServed": "Montgomery County, MD",
+      "description": "High-precision residential lawn mowing using push mowers to prevent soil compaction and ensure a superior finish."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    }
+  ]
+};
 
 export default function LawnMowingPage() {
   return (
     <>
-      <section className="relative pt-32 pb-20 bg-brand-dark">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <FadeIn>
-            <h1 className="text-4xl md:text-6xl font-black mb-6">Professional Lawn Mowing Services</h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
-              The precision of a push mower, the reliability of a local team. Serving homeowners across Montgomery County, MD.
-            </p>
-            <Link href="/contact" className="bg-brand-accent px-10 py-4 rounded-lg font-black hover:bg-white hover:text-brand-dark transition-all">
-              Get My Free Estimate
-            </Link>
-          </FadeIn>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      
+      {/* 1. Hero Section */}
+      <section className="relative pt-32 pb-24 bg-brand-dark overflow-hidden text-inter">
+        <div className="absolute inset-0 z-0">
+          <Image src="/images/hero.png" alt="Perfectly mowed green lawn" fill className="object-cover opacity-20" priority />
+          <div className="absolute inset-0 bg-brand-dark/80" />
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <Breadcrumbs items={[{ label: "Lawn Mowing", href: "/lawn-mowing" }]} />
+          
+          <div className="text-center text-white mt-12">
+              <span className="text-brand-accent font-black tracking-widest text-sm mb-4 block uppercase leading-none italic">Elite Residential Care</span>
+              <h1 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter leading-tight">Professional Lawn Mowing <br className="hidden md:block" /> in Montgomery County</h1>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10 font-light leading-relaxed">
+                We don&apos;t just cut grass—we manage turf health. Our exclusive **push-mower approach** is designed for homeowners who value precision, soil protection, and ultimate curb appeal.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <Link href="/contact" className="w-full sm:w-auto bg-brand-accent text-white px-10 py-5 rounded-xl font-black hover:bg-white hover:text-brand-dark transition-all shadow-xl transform hover:-translate-y-1">
+                  Get My Free Estimate
+                </Link>
+              </div>
+            </div>
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <FadeIn direction="left">
-              <h2 className="text-3xl font-bold text-brand-dark mb-6">Expert Mowing for Residential Lawns</h2>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Most companies rush through residential yards with heavy riding mowers that damage the soil. At Prime Green Landscape LLC, we believe your lawn deserves better. Our push mower service is designed to deliver a pristine, precise cut that enhances your home&apos;s curb appeal while protecting the long-term health of your grass.
-              </p>
-              <ul className="space-y-4 mb-8">
-                {["Perfectly straight lines", "Crisp edging along walkways", "No soil compaction", "Quiet, neighbor-friendly equipment"].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3">
-                    <Check className="w-5 h-5 text-brand-accent" />
-                    <span className="font-medium text-gray-700">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </FadeIn>
-            <FadeIn direction="right" className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
-              <Image src="/images/after.png" alt="Freshly mowed lawn" fill className="object-cover" />
-            </FadeIn>
+      {/* 2. Benefits Grid */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-12">
+            {benefits.map((b, i) => (
+              <div key={i} className="text-center group">
+                <div className="w-16 h-16 bg-brand-bg rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-accent group-hover:text-white transition-all shadow-sm">
+                  <b.icon className="w-8 h-8" />
+                </div>
+                <h3 className="text-2xl font-black text-brand-dark mb-4">{b.title}</h3>
+                <p className="text-gray-600 leading-relaxed font-medium text-sm">{b.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50 border-y border-gray-200">
+      {/* 3. The Process */}
+      <section className="py-24 bg-brand-bg border-y border-gray-100">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <div className="text-left">
+              <h2 className="text-3xl md:text-5xl font-black text-brand-dark mb-8 leading-tight tracking-tighter italic underline decoration-brand-accent underline-offset-8">Our 5-Step Mowing Protocol</h2>
+              <p className="text-lg text-lg text-gray-600 mb-12 font-medium">Consistency is key to a healthy lawn. Every visit follows our strict quality checklist.</p>
+              
+              <div className="space-y-8">
+                {steps.map((s, i) => (
+                  <div key={i} className="flex gap-6 items-start">
+                    <div className="text-4xl font-black text-brand-accent/20 italic">{i + 1}</div>
+                    <div>
+                      <h4 className="text-xl font-black text-brand-dark mb-1">{s.title}</h4>
+                      <p className="text-gray-600 text-sm font-medium">{s.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="relative">
+              <div className="absolute -inset-4 bg-white rounded-[2rem] shadow-2xl z-0" />
+              <div className="relative z-10 aspect-square rounded-2xl overflow-hidden border-8 border-white shadow-lg">
+                <Image src="/images/after.png" alt="Perfect lawn stripes" fill className="object-cover" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Local Coverage */}
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-12">Service Areas for Lawn Mowing</h2>
+          <div className="mb-16">
+            <h2 className="text-3xl md:text-5xl font-black text-brand-dark mb-6 tracking-tight">Neighborhoods We Mow</h2>
+            <p className="text-lg text-gray-600 font-medium max-w-2xl mx-auto italic">Providing reliable, high-detail weekly mowing to homeowners in:</p>
+          </div>
+          
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {["Montgomery Village", "Gaithersburg", "Rockville", "Germantown", "Bethesda", "Silver Spring"].map((city) => (
-              <Link key={city} href={`/areas/${city.toLowerCase().replace(" ", "-")}`} className="bg-white p-6 rounded-xl border border-gray-200 hover:border-brand-accent transition-colors flex items-center justify-between group">
-                <span className="font-bold text-brand-dark">{city}, MD</span>
-                <ChevronRight className="text-gray-300 group-hover:text-brand-accent" />
+              <Link key={city} href={`/areas/${city.toLowerCase().replace(" ", "-")}`} className="bg-brand-bg p-8 rounded-2xl border border-gray-100 hover:border-brand-accent hover:bg-white transition-all flex items-center justify-between group shadow-sm hover:shadow-xl">
+                <span className="font-black text-brand-dark text-lg group-hover:text-brand-accent">{city}, MD</span>
+                <div className="bg-white p-2 rounded-full group-hover:bg-brand-accent group-hover:text-white transition-all shadow-sm">
+                  <ChevronRight className="w-5 h-5" />
+                </div>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      {/* 5. FAQs */}
+      <section className="py-24 bg-gray-50 border-t border-gray-200">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Common Questions</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-black text-brand-dark mb-6 tracking-tighter italic">Common Mowing Questions</h2>
+            <p className="text-lg text-gray-600 font-medium">Specifics for our Montgomery County residential clients.</p>
+          </div>
           <FAQAccordion items={faqs} />
         </div>
       </section>
 
-      <section className="bg-brand-dark py-20 text-center text-white">
-        <h2 className="text-3xl md:text-4xl font-black mb-8">Ready for a Better Lawn Cut?</h2>
-        <Link href="/contact" className="bg-white text-brand-dark px-10 py-5 rounded-md font-black hover:bg-brand-accent hover:text-white transition-all">
-          Request My Free Quote
-        </Link>
+      {/* 6. Final CTA */}
+      <section className="bg-brand-dark py-32 text-center text-white relative overflow-hidden">
+        <div className="absolute bottom-0 left-0 w-full h-1 bg-brand-accent" />
+        <div className="text-center">
+          <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tighter leading-tight">Ready for a Superior <br className="hidden md:block" /> Lawn Cut?</h2>
+          <p className="text-xl text-gray-400 mb-12 font-light max-w-2xl mx-auto italic">Quotes delivered in under 2 hours. Join your neighbors today.</p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <Link href="/contact" className="w-full sm:w-auto bg-white text-brand-dark px-12 py-6 rounded-xl font-black hover:bg-brand-accent hover:text-white transition-all shadow-2xl text-xl transform hover:scale-105 active:scale-95">
+              Request My Free Quote
+            </Link>
+          </div>
+        </div>
       </section>
     </>
   );

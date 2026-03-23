@@ -9,14 +9,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}/areas/${city}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.8,
+    priority: 0.7,
   }));
 
   const blogs = Object.keys(blogPosts).map((slug) => ({
     url: `${baseUrl}/blog/${slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
-    priority: 0.7,
+    priority: 0.6,
+  }));
+
+  const services = [
+    'lawn-mowing',
+    'mulching',
+    'yard-cleanup',
+    'weed-removal',
+    'edging-trimming',
+    'seasonal-cleanup'
+  ].map((service) => ({
+    url: `${baseUrl}/${service}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
   }));
 
   return [
@@ -36,7 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/about`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.8,
+      priority: 0.5,
     },
     {
       url: `${baseUrl}/contact`,
@@ -48,8 +62,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/blog`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.7,
     },
+    ...services,
     ...cities,
     ...blogs,
   ];

@@ -1,56 +1,206 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
-import { Check } from "lucide-react";
+import { Check, ShieldCheck, Leaf, Clock, ChevronRight, Flower2, Scissors, Search } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Expert Weed Removal Services | Montgomery County, MD",
-  description: "Don't let weeds choke your lawn and garden. Our professional removal services restore the beauty and health of your property. Serving local MD homeowners.",
+  title: "Professional Manual Weed Removal | Montgomery County, MD",
+  description: "Elite hand-weeding services in Gaithersburg, Rockville, and Potomac. We prioritize root extraction and organic bed care to protect your ornamental plants. Free quotes.",
+};
+
+const benefits = [
+  { 
+    title: "Complete Root Extraction", 
+    desc: "Unlike sprays that only kill the surface, we manually remove the entire root system to prevent regrowth.",
+    icon: Search 
+  },
+  { 
+    title: "Chemical-Free Safety", 
+    desc: "Protect your children, pets, and beneficial pollinators with our organic, hand-labor approach.",
+    icon: Leaf 
+  },
+  { 
+    title: "Precision Bed Care", 
+    desc: "We differentiate between weeds and your prized perennials, ensuring only the intruders are removed.",
+    icon: Flower2 
+  }
+];
+
+const steps = [
+  { title: "Bed Inspection", desc: "We identify specific weed species and differentiate them from your ornamental plants." },
+  { title: "Manual Extraction", desc: "Using specialized hand tools to loosen soil and extract the full root of each weed." },
+  { title: "Detail Edge Clearing", desc: "Clearing small weeds that grow in the cracks of walkways and bed borders." },
+  { title: "Debris Collection", desc: "Removing all pulled weeds from the site to prevent seeds from re-germinating." },
+  { title: "Finished Polish", desc: "Smoothening bed surfaces and a final blowdown of the surrounding work area." }
+];
+
+const faqs = [
+  { 
+    question: "Why do you prefer manual weeding over spraying?", 
+    answer: "Manual weeding is safer for your existing plants and the environment. More importantly, it ensures the root is removed immediately, whereas sprays can take weeks to work and often miss the root system entirely." 
+  },
+  { 
+    question: "How often should I have my beds weeded?", 
+    answer: "For most Montgomery County homes, a monthly maintenance schedule from April through October keeps beds looking pristine. We also offer one-time heavy 'rescue' weeding for neglected beds." 
+  },
+  { 
+    question: "Can you handle invasive vines like English Ivy?", 
+    answer: "Yes. We specialize in the removal of invasive vines and overgrowth that can often choke out trees and garden beds if left unchecked." 
+  }
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Professional Manual Weed Removal",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Prime Green Landscape LLC"
+      },
+      "areaServed": "Montgomery County, MD",
+      "description": "Eco-friendly manual weed extraction and garden bed maintenance service."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    }
+  ]
 };
 
 export default function WeedRemovalPage() {
   return (
     <>
-      <section className="relative pt-32 pb-20 bg-brand-dark">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <FadeIn>
-            <h1 className="text-4xl md:text-6xl font-black mb-6">Expert Weed Removal</h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
-              Reclaim your garden beds and lawn with our detail-oriented weeding services.
-            </p>
-            <Link href="/contact" className="bg-brand-accent px-10 py-4 rounded-lg font-black hover:bg-white hover:text-brand-dark transition-all">
-              Request a Weeding Quote
-            </Link>
-          </FadeIn>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      
+      {/* 1. Hero Section */}
+      <section className="relative pt-32 pb-24 bg-brand-dark overflow-hidden text-inter">
+        <div className="absolute inset-0 z-0">
+          <Image src="https://images.unsplash.com/photo-1599059813005-11265ba4b4ce?w=1600&q=80" alt="Detailed hand weeding" fill className="object-cover opacity-20" priority />
+          <div className="absolute inset-0 bg-brand-dark/80" />
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <Breadcrumbs items={[{ label: "Weed Removal", href: "/weed-removal" }]} />
+          
+          <div className="text-center text-white mt-12">
+              <span className="text-brand-accent font-black tracking-widest text-sm mb-4 block uppercase leading-none italic">Precision Hand-Labor</span>
+              <h1 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter leading-tight">Professional Weed Removal <br className="hidden md:block" /> in Montgomery County</h1>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10 font-light leading-relaxed">
+                Don&apos;t just suppress weeds—**eliminate them**. Our manual extraction process is the safest and most effective way to maintain high-end garden beds.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <Link href="/contact" className="w-full sm:w-auto bg-brand-accent text-white px-10 py-5 rounded-xl font-black hover:bg-white hover:text-brand-dark transition-all shadow-xl transform hover:-translate-y-1">
+                  Request a Weeding Quote
+                </Link>
+              </div>
+            </div>
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <FadeIn direction="left">
-              <h2 className="text-3xl font-bold text-brand-dark mb-6">Manual Precision, Lasting Results</h2>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Chemical sprays often only do half the job. We specialize in manual weed removal from garden beds and pathways, ensuring the roots are gone and your desirable plants can thrive. We also provide pre-emergent recommendations to keep new weeds from taking hold.
-              </p>
-              <ul className="space-y-4 mb-8">
-                {["Hand-weeding in garden beds", "Pathway clearing", "Root-level removal", "Professional advice"].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3">
-                    <Check className="w-5 h-5 text-brand-accent" />
-                    <span className="font-medium text-gray-700">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </FadeIn>
+      {/* 2. Benefits Grid */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-12">
+            {benefits.map((b, i) => (
+              <div key={i} className="text-center group">
+                <div className="w-16 h-16 bg-brand-bg rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-accent group-hover:text-white transition-all shadow-sm">
+                  <b.icon className="w-8 h-8" />
+                </div>
+                <h3 className="text-2xl font-black text-brand-dark mb-4">{b.title}</h3>
+                <p className="text-gray-600 leading-relaxed font-medium text-sm">{b.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-brand-dark py-20 text-center text-white">
-        <h2 className="text-3xl md:text-4xl font-black mb-8">Say Goodbye to Stubborn Weeds</h2>
-        <Link href="/contact" className="bg-white text-brand-dark px-10 py-5 rounded-md font-black hover:bg-brand-accent hover:text-white transition-all">
-          Get My Free Quote
-        </Link>
+      {/* 3. The Process */}
+      <section className="py-24 bg-brand-bg border-y border-gray-100">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <div className="text-left">
+              <h2 className="text-3xl md:text-5xl font-black text-brand-dark mb-8 leading-tight tracking-tighter italic underline decoration-brand-accent underline-offset-8">The Root-First Approach</h2>
+              <p className="text-lg text-gray-600 mb-12 font-medium">We treat every ornamental bed with the care of a gardener, not just a maintenance crew.</p>
+              
+              <div className="space-y-8">
+                {steps.map((s, i) => (
+                  <div key={i} className="flex gap-6 items-start">
+                    <div className="text-4xl font-black text-brand-accent/20 italic">{i + 1}</div>
+                    <div>
+                      <h4 className="text-xl font-black text-brand-dark mb-1">{s.title}</h4>
+                      <p className="text-gray-600 text-sm font-medium">{s.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="relative">
+              <div className="absolute -inset-4 bg-white rounded-[2rem] shadow-2xl z-0" />
+              <div className="relative z-10 aspect-square rounded-2xl overflow-hidden border-8 border-white shadow-lg">
+                <Image src="https://images.unsplash.com/photo-1416870230247-d021392c9462?w=1600&q=80" alt="Beautiful garden bed without weeds" fill className="object-cover" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Local Areas */}
+      <section className="py-24 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <div className="mb-16">
+            <h2 className="text-3xl md:text-5xl font-black text-brand-dark mb-6 tracking-tight">Caring for Local Gardens</h2>
+            <p className="text-lg text-gray-600 font-medium max-w-2xl mx-auto italic">Detail-oriented weed removal for homeowners in:</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {["Montgomery Village", "Gaithersburg", "Rockville", "Germantown", "Bethesda", "Silver Spring"].map((city) => (
+              <Link key={city} href={`/areas/${city.toLowerCase().replace(" ", "-")}`} className="bg-brand-bg p-8 rounded-2xl border border-gray-100 hover:border-brand-accent hover:bg-white transition-all flex items-center justify-between group shadow-sm hover:shadow-xl">
+                <span className="font-black text-brand-dark text-lg group-hover:text-brand-accent">{city}, MD</span>
+                <ChevronRight className="w-5 h-5 text-gray-300 group-hover:text-brand-accent transition-all" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. FAQs */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-black text-brand-dark mb-6 tracking-tighter italic">Weeding FAQs</h2>
+            <p className="text-lg text-gray-600 font-medium">Why manual care makes the difference.</p>
+          </div>
+          <FAQAccordion items={faqs} />
+        </div>
+      </section>
+
+      {/* 6. Final CTA */}
+      <section className="bg-brand-dark py-32 text-center text-white relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-1 bg-brand-accent" />
+        <div className="text-center">
+          <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tighter leading-tight">Tired of Stubborn Weeds?</h2>
+          <p className="text-xl text-gray-400 mb-12 font-light max-w-2xl mx-auto italic">Quotes delivered in under 2 hours. Hand-extraction excellence.</p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <Link href="/contact" className="inline-block bg-white text-brand-dark px-12 py-6 rounded-xl font-black hover:bg-brand-accent hover:text-white transition-all shadow-2xl text-xl transform hover:scale-105 active:scale-95">
+              Get My Free Weeding Quote
+            </Link>
+          </div>
+        </div>
       </section>
     </>
   );

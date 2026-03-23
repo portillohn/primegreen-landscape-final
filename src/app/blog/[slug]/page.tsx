@@ -4,6 +4,8 @@ import { blogPosts } from '@/lib/blogData';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Calendar, Clock, Leaf } from 'lucide-react';
+import Breadcrumbs from "@/components/Breadcrumbs";
+import FadeIn from "@/components/FadeIn";
 
 export const revalidate = 86400; // 24 hours ISR
 
@@ -20,6 +22,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   return {
     title: `${post.title} | Prime Green Landscape LLC`,
     description: post.excerpt,
+    alternates: {
+      canonical: `https://primegreenlandscape.com/blog/${params.slug}`,
+    }
   };
 }
 
@@ -68,11 +73,37 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const wordCount = post.content.split(/\s+/).length;
   const readTime = Math.max(1, Math.ceil(wordCount / 200));
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "image": post.coverImage,
+    "datePublished": post.date,
+    "author": {
+      "@type": "Organization",
+      "name": "Prime Green Landscape LLC"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Prime Green Landscape LLC",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://primegreenlandscape.com/images/logo.jpg"
+      }
+    },
+    "description": post.excerpt
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      
       <article className="bg-white">
         {/* Post Cover Header */}
-        <div className="relative h-[40vh] min-h-[400px] w-full pt-[80px] md:pt-[96px]">
+        <div className="relative h-[50vh] min-h-[500px] w-full pt-32">
           <Image
             src={post.coverImage}
             alt={post.title}
@@ -81,7 +112,15 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             className="object-cover"
           />
           <div className="absolute inset-0 bg-brand-dark/60" />
-          <div className="absolute inset-0 flex flex-col justify-end pb-16">
+          
+          <div className="absolute inset-0 flex flex-col justify-between pt-32 pb-16">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+              <Breadcrumbs items={[
+                { label: "Blog", href: "/blog" },
+                { label: post.title, href: `/blog/${params.slug}` }
+              ]} />
+            </div>
+            
             <div className="max-w-4xl mx-auto px-4 w-full">
               <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight max-w-3xl">
                 {post.title}
@@ -111,19 +150,56 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           <div className="prose prose-lg prose-gray text-gray-700 font-normal">
             {parseContent(post.content)}
           </div>
+          
+          <div className="mt-16 pt-8 border-t border-gray-100">
+            <h3 className="text-xl font-bold text-brand-dark mb-6">Expert Services Mentioned:</h3>
+            <div className="flex flex-wrap gap-3">
+              {[
+                { label: "Precision Mowing", href: "/lawn-mowing" },
+                { label: "Seasonal Cleanup", href: "/seasonal-cleanup" },
+                { label: "Yard Restoration", href: "/yard-cleanup" },
+                { label: "Weed Control", href: "/weed-removal" }
+              ].map(s => (
+                <Link key={s.href} href={s.href} className="px-5 py-2.5 bg-brand-bg text-brand-dark rounded-full text-sm font-bold border border-brand-accent/20 hover:border-brand-accent transition-colors">
+                  {s.label}
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </article>
 
+      {/* Service Areas */}
+      <section className="bg-gray-50 py-12 border-t border-gray-200">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h3 className="text-sm font-black text-brand-accent uppercase tracking-widest mb-6">Serving Montgomery County Homeowners</h3>
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
+            {['Gaithersburg', 'Rockville', 'Montgomery Village', 'Germantown', 'Bethesda', 'Silver Spring'].map(city => (
+              <Link key={city} href={`/areas/${city.toLowerCase().replace(' ', '-')}`} className="text-gray-500 hover:text-brand-dark font-medium transition-colors">
+                Lawn Care in {city}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* End CTA */}
-      <section className="bg-brand-bg py-16 border-t border-gray-200">
+      <section className="bg-brand-dark py-20">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-brand-dark mb-4">Need Professional Lawn Care in Montgomery County?</h2>
-          <p className="text-gray-600 mb-8 max-w-xl mx-auto">
-            Let our experienced push mower team give your lawn the precision and care it needs to thrive this season.
+          <h2 className="text-3xl md:text-4xl font-black text-white mb-6 leading-tight">
+            Ready for a professional-grade lawn?
+          </h2>
+          <p className="text-xl text-gray-300 mb-10 font-light">
+            Experience the push mower difference. Join hundreds of Montgomery County homeowners who trust Prime Green with their curb appeal.
           </p>
-          <Link href="/contact" className="inline-block px-8 py-4 bg-brand-accent text-white font-bold rounded-md hover:bg-brand-dark transition-colors shadow-sm text-lg">
-            Request Your Free Quote
-          </Link>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Link href="/contact" className="inline-block px-10 py-5 bg-brand-accent text-white font-extrabold rounded-md hover:bg-white hover:text-brand-dark transition-all shadow-xl text-lg uppercase tracking-tighter">
+              Get Your Free Quote →
+            </Link>
+            <Link href="/services" className="inline-block px-10 py-5 bg-transparent border-2 border-white/20 text-white font-extrabold rounded-md hover:bg-white/10 transition-all text-lg uppercase tracking-tighter">
+              View Service Tiers
+            </Link>
+          </div>
         </div>
       </section>
     </>

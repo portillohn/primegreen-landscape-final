@@ -3,73 +3,103 @@ import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import { CheckCircle2, Leaf, Target, Handshake } from "lucide-react";
 import Image from "next/image";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "About Us | Prime Green Landscape LLC",
   description: "Learn why Prime Green Landscape LLC is Montgomery County's trusted choice for precise, reliable, and professional residential lawn mowing.",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "About Prime Green Landscape LLC",
+  "description": "Information about Prime Green Landscape LLC, our values, and our commitment to Montgomery County lawn care.",
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://primegreenlandscape.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About",
+        "item": "https://primegreenlandscape.com/about"
+      }
+    ]
+  }
+};
+
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      
       {/* HERO SECTION */}
-      <section className="bg-gradient-to-r from-brand-dark to-[#1d5c22] pt-[72px] pb-20 border-b-4 border-brand-accent">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <FadeIn>
+      <section className="bg-gradient-to-r from-brand-dark to-[#1d5c22] pt-32 pb-20 border-b-4 border-brand-accent">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs items={[{ label: "About", href: "/about" }]} />
+          
+          <div className="text-center text-white mt-12">
             <h1 className="text-4xl md:text-6xl font-extrabold mb-4 tracking-tight">About Prime Green Landscape LLC</h1>
-          </FadeIn>
+          </div>
         </div>
       </section>
 
       {/* OUR STORY */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <h2 className="text-3xl font-bold text-brand-dark mb-8 text-center">Started in Montgomery County. Built for Montgomery County.</h2>
-            <div className="prose prose-lg text-gray-600 mx-auto">
-              <p>
-                Prime Green Landscape LLC was founded on a simple realization: residential lawns in Montgomery County were suffering at the hands of massive commercial equipment. Homeowners were paying a premium for lawn care, only to be left with rutted soil, scalped edges, and grass that thinned out year after year due to severe soil compaction. We knew there was a better way, and it started with going back to the basics &mdash; push mowers.
-              </p>
-              <p>
-                From day one, our commitment has been to residential quality over sheer volume. We aren&apos;t trying to mow 50 lawns a day, cutting corners to beat the clock. Instead, we take the time to treat every property with the meticulous care it deserves. Our lightweight push mowers allow us to achieve the perfect detail work around garden beds, fences, and hardscaping, ensuring your lawn enhances the aesthetic appeal of your home perfectly.
-              </p>
-              <p>
-                Our promise to every homeowner across Montgomery Village, Gaithersburg, Rockville, and beyond is straightforward: we will treat your lawn like it&apos;s our own. We show up when we say we will, we execute with precision, and we utilize transparent, modern billing through Yardbook to make your experience completely hassle-free. Your curb appeal is our reputation.
-              </p>
-            </div>
-          </FadeIn>
+          <h2 className="text-3xl font-bold text-brand-dark mb-8 text-center">Started in Montgomery County. Built for Montgomery County.</h2>
+          <div className="prose prose-lg text-gray-600 mx-auto">
+            <p>
+              Prime Green Landscape LLC was founded on a simple realization: residential lawns in Montgomery County were suffering at the hands of massive commercial equipment. Homeowners were paying a premium for lawn care, only to be left with rutted soil, scalped edges, and grass that thinned out year after year due to severe soil compaction. We knew there was a better way, and it started with going back to the basics &mdash; push mowers.
+            </p>
+            <p>
+              From day one, our commitment has been to residential quality over sheer volume. We aren&apos;t trying to mow 50 lawns a day, cutting corners to beat the clock. Instead, we take the time to treat every property with the meticulous care it deserves. Our lightweight push mowers allow us to achieve the perfect detail work around garden beds, fences, and hardscaping, ensuring your lawn enhances the aesthetic appeal of your home perfectly.
+            </p>
+            <p>
+              Our promise to every homeowner across Montgomery Village, Gaithersburg, Rockville, and beyond is straightforward: we will treat your lawn like it&apos;s our own. We show up when we say we will, we execute with precision, and we utilize transparent, modern billing through Yardbook to make your experience completely hassle-free. Your curb appeal is our reputation.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* OUR VALUES */}
       <section className="py-20 bg-brand-bg border-y border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn className="text-center mb-16">
+          <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-brand-dark">Our Values</h2>
-          </FadeIn>
+          </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <FadeIn delay={0.1} className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
               <Target className="w-12 h-12 text-brand-accent mb-6" />
               <h3 className="text-xl font-bold text-brand-dark mb-4">Precision Over Speed</h3>
               <p className="text-gray-600">
                 We take the time to do it right. Our push mowers ensure clean, straight lines and perfect edging without any rushed, sloppy cuts.
               </p>
-            </FadeIn>
-            <FadeIn delay={0.2} className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            </div>
+            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
               <Handshake className="w-12 h-12 text-brand-accent mb-6" />
               <h3 className="text-xl font-bold text-brand-dark mb-4">Honest & Transparent</h3>
               <p className="text-gray-600">
                 Clear pricing, no surprises, no hidden fees, and never any contracts. Convenient online invoices via Yardbook for a seamless experience.
               </p>
-            </FadeIn>
-            <FadeIn delay={0.3} className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            </div>
+            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
               <Leaf className="w-12 h-12 text-brand-accent mb-6" />
               <h3 className="text-xl font-bold text-brand-dark mb-4">Quality That Shows</h3>
               <p className="text-gray-600">
                 Every visit, every lawn, every time. We&apos;re dedicated to improving your soil health and giving you the best-looking yard on the block.
               </p>
-            </FadeIn>
+            </div>
           </div>
         </div>
       </section>
@@ -77,12 +107,12 @@ export default function AboutPage() {
       {/* WHY WE'RE DIFFERENT (TABLE) */}
       <section className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn className="text-center mb-16">
+          <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-brand-dark mb-4">Why We&apos;re Different</h2>
             <p className="text-lg text-gray-600">See how our specialized approach compares to standard volume-based lawn services.</p>
-          </FadeIn>
+          </div>
 
-          <FadeIn delay={0.2}>
+          
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse rounded-xl overflow-hidden shadow-sm">
                 <thead>
@@ -126,14 +156,13 @@ export default function AboutPage() {
                 </tbody>
               </table>
             </div>
-          </FadeIn>
         </div>
       </section>
 
       {/* OWNER SECTION */}
       <section className="py-24 bg-gray-50 border-t border-gray-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn className="bg-white rounded-3xl p-8 md:p-12 shadow-md flex flex-col md:flex-row items-center gap-10">
+          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-md flex flex-col md:flex-row items-center gap-10">
             <div className="shrink-0 w-48 h-48 bg-white rounded-full flex items-center justify-center p-6 border-4 border-brand-accent shadow-lg relative overflow-hidden">
               <Image
                 src="/images/logo.jpg"
@@ -165,7 +194,7 @@ export default function AboutPage() {
                 </span>
               </div>
             </div>
-          </FadeIn>
+          </div>
         </div>
       </section>
 
