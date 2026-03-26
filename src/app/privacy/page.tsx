@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Prime Green Landscape LLC",
+  title: "Privacy Policy",
   description: "Privacy policy regarding the collection and use of personal data by Prime Green Landscape LLC in Montgomery County, MD.",
 };
 

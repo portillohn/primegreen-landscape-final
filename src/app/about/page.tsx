@@ -6,7 +6,7 @@ import Image from "next/image";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "About Us | Prime Green Landscape LLC",
+  title: "About Us",
   description: "Learn why Prime Green Landscape LLC is Montgomery County's trusted choice for precise, reliable, and professional residential lawn mowing.",
 };
 

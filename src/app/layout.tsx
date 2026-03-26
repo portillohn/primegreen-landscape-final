@@ -19,15 +19,18 @@ export const metadata: Metadata = {
   description:
     'Professional residential lawn mowing in Montgomery County, MD. ' +
     'Push mower specialists. Free quotes. Online billing via Yardbook.',
-  metadataBase: new URL('https://primegreenlandscape.com'),
+  metadataBase: new URL('https://www.primegreenlandscape.com'),
   alternates: {
     canonical: '/',
+  },
+  icons: {
+    icon: '/favicon.ico',
   },
   openGraph: {
     siteName: 'Prime Green Landscape LLC',
     locale: 'en_US',
     type: 'website',
-    url: 'https://primegreenlandscape.com',
+    url: 'https://www.primegreenlandscape.com',
   },
   twitter: {
     card: 'summary_large_image',
@@ -118,7 +121,6 @@ export default function RootLayout({
     <html lang="en" className={inter.variable}>
       <GoogleTagManager gtmId="GTM-WTWV8FZW" />
       <head>
-        <link rel="icon" href="/favicon.jpg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}

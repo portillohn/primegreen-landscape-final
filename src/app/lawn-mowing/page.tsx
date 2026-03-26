@@ -101,7 +101,7 @@ export default function LawnMowingPage() {
               <span className="text-brand-accent font-black tracking-widest text-sm mb-4 block uppercase leading-none italic">Elite Residential Care</span>
               <h1 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter leading-tight">Professional Lawn Mowing <br className="hidden md:block" /> in Montgomery County</h1>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10 font-light leading-relaxed">
-                We don&apos;t just cut grass—we manage turf health. Our exclusive **push-mower approach** is designed for homeowners who value precision, soil protection, and ultimate curb appeal.
+                We don&apos;t just cut grass—we manage turf health. Our exclusive <strong>push-mower approach</strong> is designed for homeowners who value precision, soil protection, and ultimate curb appeal.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                 <Link href="/contact" className="w-full sm:w-auto bg-brand-accent text-white px-10 py-5 rounded-xl font-black hover:bg-white hover:text-brand-dark transition-all shadow-xl transform hover:-translate-y-1">

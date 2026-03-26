@@ -395,21 +395,21 @@ export default function Home() {
               <div className="flex text-yellow-400 mb-4">
                 {[...Array(5)].map((_, i) => <Star key={i} fill="currentColor" className="w-5 h-5" />)}
               </div>
-              <p className="text-gray-700 mb-6 italic font-medium leading-relaxed">&quot;The best lawn mowing service in **Montgomery Village**. Prime Green transformed my front yard in under an hour. The push mower cut is SO much cleaner than my last company&apos;s riding mower. My HOA actually complimented me!&quot;</p>
+              <p className="text-gray-700 mb-6 italic font-medium leading-relaxed">&quot;The best lawn mowing service in <strong>Montgomery Village</strong>. Prime Green transformed my front yard in under an hour. The push mower cut is SO much cleaner than my last company&apos;s riding mower. My HOA actually complimented me!&quot;</p>
               <div className="font-bold text-brand-dark uppercase tracking-wider text-xs">— Sarah M. | Montgomery Village, MD</div>
             </div>
             <div className="bg-brand-bg p-8 rounded-2xl shadow-sm border border-gray-100 relative">
               <div className="flex text-yellow-400 mb-4">
                 {[...Array(5)].map((_, i) => <Star key={i} fill="currentColor" className="w-5 h-5" />)}
               </div>
-              <p className="text-gray-700 mb-6 italic font-medium leading-relaxed">&quot;I was looking for reliable lawn care in **Gaithersburg** and I&apos;m so glad I found them. I love how easy the Yardbook invoice is — I pay from my phone in 10 seconds. No hassle.&quot;</p>
+              <p className="text-gray-700 mb-6 italic font-medium leading-relaxed">&quot;I was looking for reliable lawn care in <strong>Gaithersburg</strong> and I&apos;m so glad I found them. I love how easy the Yardbook invoice is — I pay from my phone in 10 seconds. No hassle.&quot;</p>
               <div className="font-bold text-brand-dark uppercase tracking-wider text-xs">— David R. | Gaithersburg, MD</div>
             </div>
             <div className="bg-brand-bg p-8 rounded-2xl shadow-sm border border-gray-100 relative">
               <div className="flex text-yellow-400 mb-4">
                 {[...Array(5)].map((_, i) => <Star key={i} fill="currentColor" className="w-5 h-5" />)}
               </div>
-              <p className="text-gray-700 mb-6 italic font-medium leading-relaxed">&quot;Reliable, professional, and they actually show up when they say they will. My **Rockville** lawn has never looked better. Best investment for our curb appeal.&quot;</p>
+              <p className="text-gray-700 mb-6 italic font-medium leading-relaxed">&quot;Reliable, professional, and they actually show up when they say they will. My <strong>Rockville</strong> lawn has never looked better. Best investment for our curb appeal.&quot;</p>
               <div className="font-bold text-brand-dark uppercase tracking-wider text-xs">— Jennifer K. | Rockville, MD</div>
             </div>
           </div>

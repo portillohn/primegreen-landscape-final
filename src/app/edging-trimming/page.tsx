@@ -102,7 +102,7 @@ export default function EdgingTrimmingPage() {
               <span className="text-brand-accent font-black tracking-widest text-sm mb-4 block uppercase leading-none italic">The Detail Specialists</span>
               <h1 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter leading-tight">Precision Edging & Trimming <br className="hidden md:block" /> in Montgomery County</h1>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10 font-light leading-relaxed">
-                It&apos;s the hidden secret of elite lawns. Our **mechanical edging service** delivers the surgical precision that separates a mowed lawn from a manicured estate.
+                It&apos;s the hidden secret of elite lawns. Our <strong>mechanical edging service</strong> delivers the surgical precision that separates a mowed lawn from a manicured estate.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                 <Link href="/contact" className="w-full sm:w-auto bg-brand-accent text-white px-10 py-5 rounded-xl font-black hover:bg-white hover:text-brand-dark transition-all shadow-xl transform hover:-translate-y-1">

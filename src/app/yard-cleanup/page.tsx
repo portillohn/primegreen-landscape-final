@@ -101,7 +101,7 @@ export default function YardCleanupPage() {
               <span className="text-brand-accent font-black tracking-widest text-sm mb-4 block uppercase leading-none italic">Complete Property Restoration</span>
               <h1 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter leading-tight">Professional Yard Cleanup <br className="hidden md:block" /> in Montgomery County</h1>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10 font-light leading-relaxed">
-                Don&apos;t let overgrowth overwhelm your home. Our throrough cleanup service restores your **curb appeal** and property safety with professional efficiency.
+                Don&apos;t let overgrowth overwhelm your home. Our thorough cleanup service restores your <strong>curb appeal</strong> and property safety with professional efficiency.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                 <Link href="/contact" className="w-full sm:w-auto bg-brand-accent text-white px-10 py-5 rounded-xl font-black hover:bg-white hover:text-brand-dark transition-all shadow-xl transform hover:-translate-y-1">

@@ -101,7 +101,7 @@ export default function WeedRemovalPage() {
               <span className="text-brand-accent font-black tracking-widest text-sm mb-4 block uppercase leading-none italic">Precision Hand-Labor</span>
               <h1 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter leading-tight">Professional Weed Removal <br className="hidden md:block" /> in Montgomery County</h1>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10 font-light leading-relaxed">
-                Don&apos;t just suppress weeds—**eliminate them**. Our manual extraction process is the safest and most effective way to maintain high-end garden beds.
+                Don&apos;t just suppress weeds—<strong>eliminate them</strong>. Our manual extraction process is the safest and most effective way to maintain high-end garden beds.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                 <Link href="/contact" className="w-full sm:w-auto bg-brand-accent text-white px-10 py-5 rounded-xl font-black hover:bg-white hover:text-brand-dark transition-all shadow-xl transform hover:-translate-y-1">

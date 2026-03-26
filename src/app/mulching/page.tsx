@@ -102,7 +102,7 @@ export default function MulchingPage() {
               <span className="text-brand-accent font-black tracking-widest text-sm mb-4 block uppercase leading-none italic">Estate-Quality Mulching</span>
               <h1 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter leading-tight">Professional Mulching Services <br className="hidden md:block" /> in Montgomery County</h1>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10 font-light leading-relaxed">
-                Protect your landscape investment. Our precision mulching service balances **horticultural health** with the high-end aesthetic your property deserves.
+                Protect your landscape investment. Our precision mulching service balances <strong>horticultural health</strong> with the high-end aesthetic your property deserves.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                 <Link href="/contact" className="w-full sm:w-auto bg-brand-accent text-white px-10 py-5 rounded-xl font-black hover:bg-white hover:text-brand-dark transition-all shadow-xl transform hover:-translate-y-1">

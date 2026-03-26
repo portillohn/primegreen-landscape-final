@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Prime Green Landscape LLC",
+  title: "Terms of Service",
   description: "Terms of Service and operating policies for Prime Green Landscape LLC in Montgomery County, MD.",
 };
 

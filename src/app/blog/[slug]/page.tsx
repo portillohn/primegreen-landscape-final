@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   if (!post) return {};
   
   return {
-    title: `${post.title} | Prime Green Landscape LLC`,
+    title: post.title,
     description: post.excerpt,
     alternates: {
       canonical: `https://primegreenlandscape.com/blog/${params.slug}`,

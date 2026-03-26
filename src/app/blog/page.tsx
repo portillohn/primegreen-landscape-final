@@ -8,7 +8,7 @@ import FadeIn from "@/components/FadeIn";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Lawn Care Blog | Prime Green Landscape LLC",
+  title: "Lawn Care Blog",
   description: "Expert lawn care tips, mowing advice, and landscaping guides for homeowners in Montgomery County, Maryland.",
 };
 

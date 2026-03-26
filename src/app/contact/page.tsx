@@ -3,7 +3,7 @@ import ContactForm from './ContactForm'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Free Lawn Care Quote | Prime Green Landscape LLC',
+  title: 'Contact Us | Free Lawn Care Quote',
   description: 'Request your free residential lawn care quote in Montgomery County. We respond within 2 hours. Serving Gaithersburg, Rockville, and Montgomery Village.',
 }
 
