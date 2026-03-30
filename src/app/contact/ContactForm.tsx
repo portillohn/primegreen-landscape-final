@@ -83,7 +83,7 @@ export default function ContactForm() {
               Request a Free Quote
             </h2>
             <p className="text-sm text-gray-500">
-              Fill out the 5 fields below.
+              Fill out the 5 required fields below.
               We respond within 2 hours.
             </p>
           </div>
@@ -92,11 +92,11 @@ export default function ContactForm() {
 
             {/* 1. Name */}
             <div>
-              <label className={lbl}>
+              <label htmlFor="field-name" className={lbl}>
                 Full Name{' '}
                 <span className="text-red-500">*</span>
               </label>
-              <input type="text" required
+              <input id="field-name" type="text" required
                 placeholder="Your full name"
                 value={form.name} onChange={set('name')}
                 className={inp}/>
@@ -104,38 +104,38 @@ export default function ContactForm() {
 
             {/* 2. Email */}
             <div>
-              <label className={lbl}>
+              <label htmlFor="field-email" className={lbl}>
                 Email Address{' '}
                 <span className="text-red-500">*</span>
               </label>
-              <input type="email" required
+              <input id="field-email" type="email" required
                 placeholder="your@email.com"
                 value={form.email} onChange={set('email')}
                 className={inp}/>
             </div>
 
-            {/* 2. Phone */}
+            {/* 3. Phone */}
             <div>
-              <label className={lbl}>
+              <label htmlFor="field-phone" className={lbl}>
                 Phone Number{' '}
                 <span className="text-red-500">*</span>
               </label>
-              <input type="tel" required
+              <input id="field-phone" type="tel" required
                 placeholder="(571) 000-0000"
                 value={form.phone} onChange={set('phone')}
                 className={inp}/>
               <p className="text-xs text-gray-400 mt-1.5">
-                We will call or text this number with your quote
+                We will text this number with your quote
               </p>
             </div>
 
-            {/* 3. Address */}
+            {/* 4. Address */}
             <div>
-              <label className={lbl}>
+              <label htmlFor="field-address" className={lbl}>
                 Service Address{' '}
                 <span className="text-red-500">*</span>
               </label>
-              <input type="text" required
+              <input id="field-address" type="text" required
                 placeholder="123 Main St, Gaithersburg MD 20877"
                 value={form.address} onChange={set('address')}
                 className={inp}/>
@@ -144,13 +144,13 @@ export default function ContactForm() {
               </p>
             </div>
 
-            {/* 4. Service */}
+            {/* 5. Service */}
             <div>
-              <label className={lbl}>
+              <label htmlFor="field-service" className={lbl}>
                 Service Needed{' '}
                 <span className="text-red-500">*</span>
               </label>
-              <select required
+              <select id="field-service" required
                 value={form.service} onChange={set('service')}
                 className={inp}>
                 <option value="">Select a service...</option>
@@ -161,15 +161,15 @@ export default function ContactForm() {
               </select>
             </div>
 
-            {/* 5. Source optional */}
-            <div>
-              <label className={lbl}>
+            {/* Optional — not counted in the "5 required" */}
+            <div className="border-t border-gray-100 pt-5">
+              <label htmlFor="field-source" className={lbl}>
                 How did you hear about us?{' '}
                 <span className="text-gray-400 font-normal">
                   (optional)
                 </span>
               </label>
-              <select
+              <select id="field-source"
                 value={form.source} onChange={set('source')}
                 className={inp}>
                 <option value="">Select...</option>

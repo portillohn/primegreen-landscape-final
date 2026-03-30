@@ -4,7 +4,8 @@ export const blogPosts = {
     title: "Best Time to Mow Your Lawn in Montgomery County, Maryland",
     date: "March 15, 2025",
     excerpt: "Discover the perfect time of day and year to mow your Maryland lawn for optimal health and greenness.",
-    coverImage: "/images/blog-1.png",
+    // Lush residential lawn — morning light, timing theme
+    coverImage: "/images/blog/best-time-to-mow-lawn-montgomery-county-maryland.webp",
     content: `
 Mowing your lawn isn't just a weekend chore—it's a critical part of maintaining the health and resilience of your turf. In Montgomery County, Maryland, we sit in the transition zone, meaning we experience both hot, humid summers and cold winters. The grass types successfully grown here—primarily cool-season varieties like Tall Fescue and Kentucky Bluegrass—have specific requirements for when they should be cut.
 
@@ -38,7 +39,8 @@ Ready to hand the work over to professionals? Visit our [services page](/service
     title: "Why Push Mowers Give Your Maryland Lawn a Better Cut",
     date: "April 3, 2025",
     excerpt: "Learn the science behind soil compaction and why lightweight push mowers are the secret to a thriving, magazine-cover lawn.",
-    coverImage: "/images/blog-2.png",
+    // Close-up of a push mower on striped turf
+    coverImage: "/images/blog/push-mower-advantage-better-lawn-cut.webp",
     content: `
 Take a drive through any residential neighborhood in [Germantown](/areas/germantown) or [Montgomery Village](/areas/montgomery-village), and you'll see a dozen landscaping trailers unloading massive zero-turn riding mowers. They are incredibly fast, but are they actually good for your residential lawn?
 
@@ -68,7 +70,8 @@ Whether you live in a tight development or a sprawling lot in [Rockville](/areas
     title: "How Often Should You Mow Your Lawn in Gaithersburg, MD?",
     date: "April 20, 2025",
     excerpt: "Weekly or bi-weekly? We break down the ideal mowing frequency for Gaithersburg residents to maintain HOA compliance and turf health.",
-    coverImage: "/images/blog-3.png",
+    // Suburban home with neat, trimmed front lawn
+    coverImage: "/images/blog/how-often-mow-lawn-gaithersburg-md.webp",
     content: `
 One of the most common questions our team receives from [Gaithersburg](/areas/gaithersburg) homeowners is: *"How often should I really be mowing my lawn?"* The short answer is that it depends entirely on the season.
 
@@ -102,7 +105,8 @@ Get started today by [contacting us](/contact) for a free, fast quote.
     title: "10 Best Lawn Care Tips for Maryland Homeowners",
     date: "May 5, 2025",
     excerpt: "Master your Maryland curb appeal with these 10 essential tips tailored for the unique climate of Montgomery County.",
-    coverImage: "/images/blog-1.png",
+    // Gardening / lawn care tools on green grass — tips theme
+    coverImage: "/images/blog/best-lawn-care-tips-maryland-homeowners.webp",
     content: `
 Maintaining a vibrant lawn in Maryland requires more than just mowing. Our "transition zone" climate presents unique challenges. Here are our top 10 tips for homeowners in [Bethesda](/areas/bethesda), [Silver Spring](/areas/silver-spring), and beyond:
 
@@ -125,7 +129,8 @@ Sometimes, the best tip is to let the experts handle it. Visit our [contact page
     title: "How to Keep Your Grass Green During Maryland Summers",
     date: "June 12, 2025",
     excerpt: "Don't let the July heat turn your lawn brown. Learn the secrets to keeping cool-season grass green in 90-degree weather.",
-    coverImage: "/images/blog-2.png",
+    // Vibrant green summer lawn with sprinkler / sunlight
+    coverImage: "/images/blog/keep-grass-green-summer-maryland.webp",
     content: `
 When Maryland summer heat hits 90°F, cool-season grasses like Tall Fescue often turn brown. Here is how to keep them green in [Montgomery Village](/areas/montgomery-village) and [Gaithersburg](/areas/gaithersburg):
 
@@ -133,7 +138,7 @@ When Maryland summer heat hits 90°F, cool-season grasses like Tall Fescue often
 
 Increase your mowing height to 4 inches. Taller grass blades keep the root zone cooler and reduce evaporation. This is a core part of our [Standard Care](/services) tier.
 
-## Time Your Watering Correcty
+## Time Your Watering Correctly
 
 Watering at night in Maryland can lead to fungal issues. The best time is between 4:00 AM and 8:00 AM, allowing the grass to dry off as the sun rises.
 
@@ -151,7 +156,8 @@ Applying nitrogen in July can burn your lawn. Wait until the cooler weather of S
     title: "Spring Yard Cleanup Checklist for Montgomery County",
     date: "March 1, 2025",
     excerpt: "Get your property ready for the growing season with our comprehensive spring cleanup guide for local MD homeowners.",
-    coverImage: "/images/blog-3.png",
+    // Spring yard cleanup — raking leaves, garden tools
+    coverImage: "/images/blog/spring-yard-cleanup-checklist-montgomery-county.webp",
     content: `
 A beautiful summer lawn starts with a thorough spring cleanup. In Montgomery County, March is the perfect time to tackle these tasks in [Rockville](/areas/rockville) and [Bethesda](/areas/bethesda):
 
@@ -169,7 +175,8 @@ Don't have the time? Our professional [Yard Cleanup Service](/yard-cleanup) hand
     title: "Fall Leaf Cleanup Services in Montgomery County, MD",
     date: "October 10, 2025",
     excerpt: "Why professional leaf removal is critical for your Maryland lawn's health before winter hits.",
-    coverImage: "/images/blog-1.png",
+    // Fall leaves on a green lawn — leaf cleanup theme
+    coverImage: "/images/blog/fall-leaf-cleanup-services-montgomery-county.webp",
     content: `
 As the leaves begin to fall in [Silver Spring](/areas/silver-spring) and [Germantown](/areas/germantown), many homeowners wonder: *"Can I just leave the leaves on the grass?"* The answer is a firm no—unless you mulch them properly.
 

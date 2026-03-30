@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import FadeIn from "@/components/FadeIn";
 import { Check, ShieldCheck, Leaf, Clock, ChevronRight, Scissors, Ruler, Sparkles } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -88,31 +87,28 @@ export default function EdgingTrimmingPage() {
       />
       
       {/* 1. Hero Section */}
-      <section className="relative pt-32 pb-24 bg-brand-dark overflow-hidden text-inter">
+      <section className="relative min-h-[52vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="https://images.unsplash.com/photo-1596733430284-f7437764b1a9?w=1600&q=80" alt="Perfectly edged driveway" fill className="object-cover opacity-20" priority />
-          <div className="absolute inset-0 bg-brand-dark/80" />
+          <Image src="/images/services/lawn-edging-sidewalk-clean-lines-maryland.webp" alt="Perfectly edged driveway and lawn border" fill className="object-cover object-center" priority />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/75 to-brand-dark/50" />
         </div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-32 pb-24">
           <Breadcrumbs items={[{ label: "Edging & Trimming", href: "/edging-trimming" }]} />
-          
-          <div className="text-center text-white mt-12">
-            
-              <span className="text-brand-accent font-black tracking-widest text-sm mb-4 block uppercase leading-none italic">The Detail Specialists</span>
-              <h1 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter leading-tight">Precision Edging & Trimming <br className="hidden md:block" /> in Montgomery County</h1>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10 font-light leading-relaxed">
-                It&apos;s the hidden secret of elite lawns. Our <strong>mechanical edging service</strong> delivers the surgical precision that separates a mowed lawn from a manicured estate.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                <Link href="/contact" className="w-full sm:w-auto bg-brand-accent text-white px-10 py-5 rounded-xl font-black hover:bg-white hover:text-brand-dark transition-all shadow-xl transform hover:-translate-y-1">
-                  Request a Detail Quote
-                </Link>
-              </div>
-            
+          <div className="mt-6 max-w-2xl">
+            <span className="text-brand-accent font-bold tracking-widest text-xs mb-3 block uppercase">The Detail Specialists</span>
+            <h1 className="text-4xl md:text-6xl font-black text-white mb-5 leading-tight tracking-tighter">
+              Precision Edging &amp; Trimming<br className="hidden md:block" /> in Montgomery County
+            </h1>
+            <p className="text-lg text-gray-200 font-light max-w-xl leading-relaxed mb-8">
+              It&apos;s the hidden secret of elite lawns. Our <strong>mechanical edging service</strong> delivers the surgical precision that separates a mowed lawn from a manicured estate.
+            </p>
+            <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-brand-accent text-white font-black rounded-xl hover:bg-white hover:text-brand-dark transition-all shadow-xl transform hover:-translate-y-0.5">
+              Request a Detail Quote
+            </Link>
           </div>
         </div>
       </section>
+
 
       {/* 2. Benefits Grid */}
       <section className="py-24 bg-white">
@@ -155,7 +151,7 @@ export default function EdgingTrimmingPage() {
             <div className="relative">
               <div className="absolute -inset-4 bg-white rounded-[2rem] shadow-2xl z-0" />
               <div className="relative z-10 aspect-square rounded-2xl overflow-hidden border-8 border-white shadow-lg">
-                <Image src="https://images.unsplash.com/photo-1592419044706-39796d40f98c?w=1600&q=80" alt="Sharp bed edging" fill className="object-cover" />
+                <Image src="/images/services/edging-detail-curb-lines-maryland.webp" alt="Close-up of crisp edging lines along a sidewalk and planting bed" fill className="object-cover" />
               </div>
             </div>
           </div>

@@ -1,11 +1,11 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { blogPosts } from '@/lib/blogData';
+import { siteConfig } from '@/lib/siteConfig';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Calendar, Clock, Leaf } from 'lucide-react';
 import Breadcrumbs from "@/components/Breadcrumbs";
-import FadeIn from "@/components/FadeIn";
 
 export const revalidate = 86400; // 24 hours ISR
 
@@ -23,8 +23,26 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     title: post.title,
     description: post.excerpt,
     alternates: {
-      canonical: `https://primegreenlandscape.com/blog/${params.slug}`,
-    }
+      canonical: `${siteConfig.url}/blog/${params.slug}`,
+    },
+    openGraph: {
+      title: `${post.title} | Prime Green Landscape LLC`,
+      description: post.excerpt,
+      url: `${siteConfig.url}/blog/${params.slug}`,
+      images: [{
+        url: `${siteConfig.url}${post.coverImage}`,
+        width: 1200,
+        height: 800,
+        alt: post.title,
+      }],
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${post.title} | Prime Green Landscape LLC`,
+      description: post.excerpt,
+      images: [`${siteConfig.url}${post.coverImage}`],
+    },
   };
 }
 
@@ -77,7 +95,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": post.title,
-    "image": post.coverImage,
+    "image": `${siteConfig.url}${post.coverImage}`,
     "datePublished": post.date,
     "author": {
       "@type": "Organization",
@@ -88,7 +106,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       "name": "Prime Green Landscape LLC",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://primegreenlandscape.com/images/logo.jpg"
+        "url": `${siteConfig.url}/images/logo.png`
       }
     },
     "description": post.excerpt

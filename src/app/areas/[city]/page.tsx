@@ -1,13 +1,13 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { serviceAreasData } from '@/lib/data';
+import { siteConfig } from '@/lib/siteConfig';
 import Link from 'next/link';
 import Image from 'next/image';
 import { 
   MapPin, Check, ChevronRight, ShieldCheck, Leaf, 
   Clock, CreditCard, Star, ChevronDown 
 } from 'lucide-react';
-import FadeIn from '@/components/FadeIn';
 import FAQAccordion from '@/components/FAQAccordion';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
@@ -27,8 +27,25 @@ export async function generateMetadata({ params }: { params: { city: string } })
     title: cityData.metaTitle,
     description: cityData.metaDescription,
     alternates: {
-      canonical: `https://primegreenlandscape.com/areas/${params.city}`,
-    }
+      canonical: `${siteConfig.url}/areas/${params.city}`,
+    },
+    openGraph: {
+      title: `${cityData.h1} | Prime Green Landscape LLC`,
+      description: cityData.metaDescription,
+      url: `${siteConfig.url}/areas/${params.city}`,
+      images: [{
+        url: `${siteConfig.url}${cityData.image}`,
+        width: 1600,
+        height: 900,
+        alt: `${cityData.h1} hero image`,
+      }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${cityData.h1} | Prime Green Landscape LLC`,
+      description: cityData.metaDescription,
+      images: [`${siteConfig.url}${cityData.image}`],
+    },
   };
 }
 
@@ -99,44 +116,40 @@ export default function CityAreaPage({ params }: { params: { city: string } }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       
-      {/* 0. Breadcrumbs & Header Space */}
-      <div className="absolute top-32 left-0 w-full z-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pointer-events-none">
-        <div className="pointer-events-auto">
-          <Breadcrumbs items={[{ label: cityData.name, href: `/areas/${params.city}` }]} />
-        </div>
-      </div>
-      
       {/* 1. City Hero Section */}
-      <section className="relative min-h-[70vh] w-full flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 w-full h-full z-0">
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
           <Image
-            src={cityData.image || "/images/hero.png"}
-            alt={`Lawn care in ${cityData.name}`}
+            src={cityData.image || "/images/home/premium-lawn-mowing-montgomery-county-md-home-hero.webp"}
+            alt={`Lawn care in ${cityData.name}, MD`}
             fill
             priority
-            className="object-cover"
+            className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-brand-dark/65" />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/88 via-brand-dark/72 to-brand-dark/40" />
         </div>
-        
-        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center text-white">
-          <div className="inline-flex items-center justify-center gap-2 bg-brand-accent/20 backdrop-blur-md border border-brand-accent/30 px-4 py-1.5 rounded-full mb-6">
-            <MapPin className="w-4 h-4 text-brand-accent" />
-            <span className="font-bold tracking-wider text-xs uppercase">{cityData.name}, Maryland</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-black mb-6 leading-tight tracking-tight">
-            {cityData.h1}
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-200 font-light max-w-3xl mx-auto mb-8">
-            {cityData.subheading}
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
-            <Link href="/contact" className="w-full sm:w-auto px-10 py-4 bg-brand-accent text-white font-black rounded-lg hover:bg-white hover:text-brand-dark transition-all shadow-xl text-lg transform hover:-translate-y-1">
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-36 pb-24">
+          <Breadcrumbs items={[{ label: cityData.name, href: `/areas/${params.city}` }]} />
+
+          <div className="mt-6 max-w-2xl">
+            <div className="inline-flex items-center gap-2 bg-brand-accent/20 border border-brand-accent/30 px-3 py-1.5 rounded-full mb-5">
+              <MapPin className="w-3.5 h-3.5 text-brand-accent" />
+              <span className="font-bold tracking-wider text-xs uppercase text-white">{cityData.name}, Maryland</span>
+            </div>
+            <h1 className="text-4xl md:text-6xl font-black text-white mb-5 leading-tight tracking-tight">
+              {cityData.h1}
+            </h1>
+            <p className="text-lg text-gray-200 font-light max-w-xl leading-relaxed mb-8">
+              {cityData.subheading}
+            </p>
+            <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-brand-accent text-white font-black rounded-xl hover:bg-white hover:text-brand-dark transition-all shadow-xl transform hover:-translate-y-0.5">
               Get Your Free Quote
             </Link>
           </div>
         </div>
       </section>
+
 
       {/* 2. Trust Bar */}
       <section className="bg-white py-8 border-b border-gray-100 shadow-sm relative z-20">
@@ -357,7 +370,7 @@ export default function CityAreaPage({ params }: { params: { city: string } }) {
       <section className="bg-brand-dark py-32 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero.png"
+            src="/images/home/premium-lawn-mowing-montgomery-county-md-home-hero.webp"
             alt="Perfect green lawn final cta"
             fill
             className="object-cover opacity-20"
@@ -376,7 +389,7 @@ export default function CityAreaPage({ params }: { params: { city: string } }) {
             <Link href="/contact" className="w-full sm:w-auto px-12 py-6 bg-white text-brand-dark font-black rounded-lg hover:bg-brand-accent hover:text-white transition-all shadow-2xl text-xl transform hover:scale-105 active:scale-95">
               Request My Free Quote
             </Link>
-            <a href="sms:+15714050031?body=Hello%20Prime%20Green!%20I%27d%20like%20a%20free%20quote%20for%20my%20home%20in%20"
+            <a href={`sms:+15714050031?body=${encodeURIComponent(`Hello Prime Green! I'd like a free quote for my home in ${cityData.name}, MD.`)}`}
               className="w-full sm:w-auto px-12 py-6 bg-transparent border-2 border-white/30 text-white font-black rounded-lg hover:bg-white/10 transition-all text-xl"
             >
               Text Us Now

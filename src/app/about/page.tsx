@@ -1,13 +1,21 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import FadeIn from "@/components/FadeIn";
 import { CheckCircle2, Leaf, Target, Handshake } from "lucide-react";
 import Image from "next/image";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { siteConfig } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
   title: "About Us",
   description: "Learn why Prime Green Landscape LLC is Montgomery County's trusted choice for precise, reliable, and professional residential lawn mowing.",
+  openGraph: {
+    images: [{
+      url: `${siteConfig.url}/images/about/about-prime-green-landscape-montgomery-county.webp`,
+      width: 1600,
+      height: 900,
+      alt: 'About Prime Green Landscape LLC in Montgomery County, Maryland',
+    }],
+  },
 };
 
 const jsonLd = {
@@ -43,20 +51,36 @@ export default function AboutPage() {
       />
       
       {/* HERO SECTION */}
-      <section className="bg-gradient-to-r from-brand-dark to-[#1d5c22] pt-32 pb-20 border-b-4 border-brand-accent">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative min-h-[44vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/about/about-prime-green-landscape-montgomery-county.webp"
+            alt="About Prime Green Landscape LLC"
+            fill
+            className="object-cover object-bottom"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/88 via-brand-dark/70 to-brand-dark/40" />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-36 pb-24">
           <Breadcrumbs items={[{ label: "About", href: "/about" }]} />
-          
-          <div className="text-center text-white mt-12">
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-4 tracking-tight">About Prime Green Landscape LLC</h1>
+          <div className="mt-6 max-w-2xl">
+            <span className="text-brand-accent font-bold tracking-widest text-xs mb-3 block uppercase">Montgomery County Professionals</span>
+            <h1 className="text-4xl md:text-6xl font-black text-white mb-5 leading-tight tracking-tighter">
+              About Prime Green<br className="hidden md:block" /> Landscape LLC
+            </h1>
+            <p className="text-lg text-gray-200 font-light max-w-lg leading-relaxed">
+              Locally owned. Push-mower precision. Built for the homes of Montgomery County.
+            </p>
           </div>
         </div>
       </section>
 
+
       {/* OUR STORY */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-brand-dark mb-8 text-center">Started in Montgomery County. Built for Montgomery County.</h2>
+          <h2 className="text-3xl md:text-4xl font-black text-brand-dark mb-8 tracking-tight">Started in Montgomery County. Built for Montgomery County.</h2>
           <div className="prose prose-lg text-gray-600 mx-auto">
             <p>
               Prime Green Landscape LLC was founded on a simple realization: residential lawns in Montgomery County were suffering at the hands of massive commercial equipment. Homeowners were paying a premium for lawn care, only to be left with rutted soil, scalped edges, and grass that thinned out year after year due to severe soil compaction. We knew there was a better way, and it started with going back to the basics &mdash; push mowers.
@@ -75,7 +99,7 @@ export default function AboutPage() {
       <section className="py-20 bg-brand-bg border-y border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-brand-dark">Our Values</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tight">Our Core Values</h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -108,7 +132,7 @@ export default function AboutPage() {
       <section className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-brand-dark mb-4">Why We&apos;re Different</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-brand-dark mb-4 tracking-tight">Why We&apos;re Different</h2>
             <p className="text-lg text-gray-600">See how our specialized approach compares to standard volume-based lawn services.</p>
           </div>
 
@@ -165,15 +189,15 @@ export default function AboutPage() {
           <div className="bg-white rounded-3xl p-8 md:p-12 shadow-md flex flex-col md:flex-row items-center gap-10">
             <div className="shrink-0 w-48 h-48 bg-white rounded-full flex items-center justify-center p-6 border-4 border-brand-accent shadow-lg relative overflow-hidden">
               <Image
-                src="/images/logo.jpg"
-                alt="Prime Green Landscape LLC Logo"
+                src="/images/about/about-prime-green-team-quality-maryland.webp"
+                alt="Prime Green quality-focused residential lawn care team in Montgomery County"
                 width={160}
                 height={160}
                 className="object-contain"
               />
             </div>
             <div>
-              <h2 className="text-3xl font-extrabold text-brand-dark mb-2">The Prime Green Team</h2>
+              <h2 className="text-3xl font-black text-brand-dark mb-2 tracking-tight">The Prime Green Team</h2>
               <p className="text-brand-accent font-bold mb-6 tracking-wider uppercase text-sm">Montgomery County Lawn Care Professionals</p>
               <p className="text-gray-600 text-lg mb-8 leading-relaxed">
                 As local residents, we know the neighborhoods, the soil conditions, and the expectations of Montgomery County homeowners. We are deeply invested in our community and take personal pride in every lawn we service. Treating every property like it&apos;s our own isn&apos;t just a marketing slogan &mdash; it&apos;s the foundation of everything we do.

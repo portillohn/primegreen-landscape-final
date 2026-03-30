@@ -1,13 +1,28 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Check, ChevronRight, ShieldCheck, Leaf, Clock, CreditCard, ChevronDown, MapPin, Star } from "lucide-react";
-import FadeIn from "@/components/FadeIn";
+import { Check, ChevronRight, ShieldCheck, Leaf, Clock, CreditCard, ChevronDown, MapPin, Star, Target, Sprout, Home as HomeIcon, Scissors, Droplets, TreeDeciduous } from "lucide-react";
 import { Metadata } from "next";
+import { siteConfig } from "@/lib/siteConfig";
 import FAQAccordion from "@/components/FAQAccordion";
 
 export const metadata: Metadata = {
   title: "Professional Residential Lawn Mowing | Montgomery County, MD",
-  description: "Elite residential lawn mowing in Montgomery County, MD. Professional push mower service for a healthier, greener lawn. Serving Gaithersburg, Rockville, & Montgomery Village.",
+  description: "Elite residential lawn mowing in Montgomery County, MD. Professional push mower service for a healthier, greener lawn. Serving Gaithersburg, Rockville, Germantown, Bethesda, Silver Spring, and Montgomery Village.",
+  alternates: { canonical: '/' },
+  openGraph: {
+    title: 'Professional Residential Lawn Mowing | Montgomery County, MD',
+    description: 'Premium push mower lawn care, mulching, edging, and seasonal cleanup in Montgomery County, Maryland.',
+    images: [{
+      url: `${siteConfig.url}/images/home/premium-lawn-mowing-montgomery-county-md-home-hero.webp`,
+      width: 1600,
+      height: 900,
+      alt: 'Prime Green Landscape LLC premium lawn mowing in Montgomery County, Maryland',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: [`${siteConfig.url}/images/home/premium-lawn-mowing-montgomery-county-md-home-hero.webp`],
+  },
 };
 
 const faqs = [
@@ -111,7 +126,7 @@ export default function Home() {
       <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 w-full h-full z-0">
           <Image
-            src="/images/hero.png"
+            src="/images/home/premium-lawn-mowing-montgomery-county-md-home-hero.webp"
             alt="Perfect green lawn"
             fill
             priority
@@ -132,7 +147,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 mt-4 md:mt-6">
             <Link href="/contact" className="w-full sm:w-auto px-10 py-5 bg-white text-brand-dark font-black rounded-xl hover:bg-brand-accent hover:text-white transition-all shadow-2xl text-lg transform hover:-translate-y-1 active:scale-95">
-              Get My Free Quote →
+              Get My Free Quote
             </Link>
             <Link href="/services" className="w-full sm:w-auto px-10 py-5 bg-transparent border-2 border-white/20 text-white font-black rounded-xl hover:bg-white/10 transition-all text-lg active:scale-95 backdrop-blur-sm">
               Our Services
@@ -173,38 +188,24 @@ export default function Home() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Not All Lawn Care Is Created Equal</h2>
-            <p className="text-lg text-gray-600">Here&apos;s why Montgomery County homeowners prefer push mowers over heavy riding equipment.</p>
+            <h2 className="text-3xl md:text-5xl font-black text-brand-dark mb-4 tracking-tight">Not All Lawn Care Is Created Equal</h2>
+            <p className="text-lg text-gray-500 font-medium">Here&apos;s why Montgomery County homeowners prefer push mowers over heavy riding equipment.</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-10">
-            <div className="p-8 rounded-2xl bg-brand-bg border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm">
-                <span className="text-2xl">🎯</span>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { icon: Target,   title: "Precision Cuts",       color: "text-green-700",  body: "Push mowers give our crew complete control over every pass. No scalping, no uneven lines, no missed corners. Your lawn looks like it belongs on a magazine cover — every single visit." },
+              { icon: Sprout,   title: "Healthier Grass",      color: "text-green-700",  body: "Heavy zero-turn riders compact your soil over time, damaging root systems and killing grass from below. Our lightweight push mowers protect soil structure and promote thick, lush growth season after season." },
+              { icon: HomeIcon, title: "HOA-Approved Results", color: "text-green-700",  body: "Montgomery County HOAs have strict curb appeal standards. Our detail-oriented approach — crisp edges, clean lines, zero debris left behind — keeps your property in full compliance and your neighbors envious." },
+            ].map(({ icon: Icon, title, color, body }) => (
+              <div key={title} className="p-8 rounded-2xl bg-brand-bg border border-gray-100 shadow-sm hover:shadow-md transition-shadow group">
+                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-brand-accent group-hover:text-white transition-all duration-200">
+                  <Icon className={`w-7 h-7 ${color} group-hover:text-white`} />
+                </div>
+                <h3 className="text-xl font-black text-brand-dark mb-3 tracking-tight">{title}</h3>
+                <p className="text-gray-600 leading-relaxed text-sm">{body}</p>
               </div>
-              <h3 className="text-xl font-bold text-brand-dark mb-4">Precision Cuts</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Push mowers give our crew complete control over every pass. No scalping, no uneven lines, no missed corners. Your lawn looks like it belongs on a magazine cover — every single visit.
-              </p>
-            </div>
-            <div className="p-8 rounded-2xl bg-brand-bg border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm">
-                <span className="text-2xl">🌱</span>
-              </div>
-              <h3 className="text-xl font-bold text-brand-dark mb-4">Healthier Grass</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Heavy zero-turn riders compact your soil over time, damaging root systems and killing grass from below. Our lightweight push mowers protect soil structure and promote thick, lush growth season after season.
-              </p>
-            </div>
-            <div className="p-8 rounded-2xl bg-brand-bg border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm">
-                <span className="text-2xl">🏡</span>
-              </div>
-              <h3 className="text-xl font-bold text-brand-dark mb-4">HOA-Approved Results</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Montgomery County HOAs have strict curb appeal standards. Our detail-oriented approach — crisp edges, clean lines, zero debris left behind — keeps your property in full compliance and your neighbors envious.
-              </p>
-            </div>
+            ))}
           </div>
 
           <div className="mt-24 pt-16 border-t border-gray-100 grid md:grid-cols-2 gap-12 items-center text-left">
@@ -225,7 +226,7 @@ export default function Home() {
               </div>
             </div>
             <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl skew-y-1">
-              <Image src="/images/after.png" alt="Perfectly manicured Montgomery County lawn" fill className="object-cover" />
+              <Image src="/images/home/perfectly-manicured-montgomery-county-lawn.webp" alt="Perfectly manicured Montgomery County lawn" fill className="object-cover" />
             </div>
           </div>
         </div>
@@ -235,8 +236,8 @@ export default function Home() {
       <section className="py-16 bg-brand-bg border-y border-gray-200 text-center font-inter">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-dark mb-4 tracking-tight">Simple, Transparent Pricing</h2>
-            <p className="text-lg text-gray-600">No contracts required. Pay after every service via Yardbook online invoice.</p>
+            <h2 className="text-3xl md:text-5xl font-black text-brand-dark mb-4 tracking-tighter">Simple, Transparent Pricing</h2>
+            <p className="text-lg text-gray-500 font-medium">No contracts required. Pay after every service via secure Yardbook invoice.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-10 mb-12 mt-10 text-left">
@@ -273,8 +274,10 @@ export default function Home() {
           {/* GROUPED SEASONAL CARE SECTION */}
           <div className="mt-20 md:mt-24 lg:mt-32 pt-16 pb-20 bg-brand-bg/30 rounded-[3rem] border border-brand-mid/5 px-6 md:px-10 lg:px-12">
             {/* YARDBOOK INFO BANNER */}
-            <div className="max-w-2xl mx-auto rounded-2xl border border-neutral-200 bg-white shadow-sm px-6 py-4 mb-12 flex flex-col md:flex-row items-center justify-center gap-4 group hover:shadow-md transition-shadow">
-              <div className="w-10 h-10 bg-brand-bg rounded-full flex items-center justify-center text-lg animate-pulse">💳</div>
+            <div className="max-w-2xl mx-auto rounded-2xl border border-neutral-200 bg-white shadow-sm px-6 py-4 mb-12 flex flex-col md:flex-row items-center justify-center gap-4">
+              <div className="w-10 h-10 bg-brand-bg rounded-xl flex items-center justify-center flex-shrink-0">
+                <CreditCard className="w-5 h-5 text-brand-accent" />
+              </div>
               <p className="text-neutral-700 text-sm md:text-base leading-snug">
                 We bill through <strong className="text-brand-dark">Yardbook</strong> — secure online card payments after each visit. <span className="opacity-60 italic">No cash required.</span>
               </p>
@@ -291,24 +294,24 @@ export default function Home() {
             </div>
 
             {/* SERVICE CARDS GRID */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 md:gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5">
               {[
-                { name: "Mulching", href: "/mulching", desc: "Eco-Friendly Protection", icon: "🌱" },
-                { name: "Yard Cleanup", href: "/yard-cleanup", desc: "Debris & Leaf Removal", icon: "🍂" },
-                { name: "Weed Removal", href: "/weed-removal", desc: "Manual Garden Care", icon: "🌿" },
-                { name: "Edging & Trimming", href: "/edging-trimming", desc: "Border Definition", icon: "✂️" },
-                { name: "Seasonal Cleanup", href: "/seasonal-cleanup", desc: "Spring & Fall Prep", icon: "🍎" },
+                { name: "Mulching",          href: "/mulching",          desc: "Eco-Friendly Protection", icon: Leaf },
+                { name: "Yard Cleanup",       href: "/yard-cleanup",       desc: "Debris & Leaf Removal",  icon: TreeDeciduous },
+                { name: "Weed Removal",       href: "/weed-removal",       desc: "Manual Garden Care",     icon: Sprout },
+                { name: "Edging & Trimming", href: "/edging-trimming",    desc: "Border Definition",      icon: Scissors },
+                { name: "Seasonal Cleanup",   href: "/seasonal-cleanup",   desc: "Spring & Fall Prep",     icon: Droplets },
               ].map((s, i) => (
                 <Link 
                   key={i} 
                   href={s.href} 
-                  className="bg-white p-7 rounded-2xl border border-neutral-200 shadow-sm hover:shadow-xl hover:border-brand-mid/30 transition-all duration-300 min-h-[220px] flex flex-col items-center justify-center text-center group hover:-translate-y-2"
+                  className="bg-white p-6 rounded-2xl border border-neutral-200 shadow-sm hover:shadow-xl hover:border-brand-mid/30 transition-all duration-300 min-h-[180px] flex flex-col items-center justify-center text-center group hover:-translate-y-1.5"
                 >
-                  <div className="w-14 h-14 bg-brand-bg rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300 shadow-inner">
-                    {s.icon}
+                  <div className="w-12 h-12 bg-brand-bg rounded-xl flex items-center justify-center group-hover:bg-brand-accent transition-all duration-300 mb-4">
+                    <s.icon className="w-5 h-5 text-brand-accent group-hover:text-white transition-colors" />
                   </div>
-                  <h3 className="text-lg md:text-xl font-bold text-neutral-900 mt-6 mb-2 tracking-tight group-hover:text-brand-mid transition-colors">{s.name}</h3>
-                  <span className="text-sm text-neutral-500 font-medium group-hover:text-neutral-700 transition-colors uppercase tracking-widest text-[10px]">{s.desc}</span>
+                  <h3 className="text-sm md:text-base font-black text-neutral-900 mb-1.5 tracking-tight group-hover:text-brand-mid transition-colors">{s.name}</h3>
+                  <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-widest">{s.desc}</span>
                 </Link>
               ))}
             </div>
@@ -320,7 +323,7 @@ export default function Home() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-brand-dark mb-6 tracking-tight italic">Our Service Area: Montgomery County Coverage</h2>
+            <h2 className="text-3xl md:text-5xl font-black text-brand-dark mb-6 tracking-tighter">Our Service Area: Montgomery County</h2>
             <p className="text-lg text-gray-600 leading-relaxed font-medium">
               We focus our precision services on a tight geographical area to ensure consistent, reliable scheduling for our residential clients. We proudly serve homeowners across these 6 core cities:
             </p>
@@ -330,7 +333,7 @@ export default function Home() {
             {cities.map((city, idx) => (
               <div key={idx} className="group">
                 <Link 
-                  href={`/areas/${city.name.toLowerCase().replace(" ", "-")}`}
+                  href={`/areas/${city.name.toLowerCase().replaceAll(" ", "-")}`}
                   className="block bg-brand-dark rounded-xl p-8 hover:bg-brand-light transition-all transform hover:-translate-y-1 shadow-md hover:shadow-xl relative overflow-hidden"
                 >
                   <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-16 translate-x-16 group-hover:scale-150 transition-transform duration-500 ease-out" />
@@ -351,15 +354,15 @@ export default function Home() {
       <section className="py-16 bg-gray-50 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-dark mb-4">The Prime Green Difference</h2>
-            <p className="text-lg text-gray-600">Every property we touch gets this treatment. Every single time.</p>
+            <h2 className="text-3xl md:text-5xl font-black text-brand-dark mb-4 tracking-tighter">The Prime Green Difference</h2>
+            <p className="text-lg text-gray-500 font-medium">Every property we touch, every single time.</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-4 rounded-2xl overflow-hidden shadow-2xl relative bg-white p-4">
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
               <Image 
-                src="/images/before.png"
-                alt="Overgrown lawn Before"
+                src="/images/home/before-overgrown-lawn-montgomery-county.webp"
+                alt="Overgrown front lawn before Prime Green service in Montgomery County"
                 fill
                 className="object-cover"
               />
@@ -369,8 +372,8 @@ export default function Home() {
             </div>
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
               <Image 
-                src="/images/after.png"
-                alt="Perfect lawn After"
+                src="/images/home/after-striped-lawn-montgomery-county.webp"
+                alt="Striped front lawn after Prime Green service in Montgomery County"
                 fill
                 className="object-cover"
               />
@@ -386,8 +389,8 @@ export default function Home() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-dark mb-4">What Our Neighbors Are Saying</h2>
-            <p className="text-lg text-gray-600">Real feedback from actual homeowners in Montgomery County.</p>
+            <h2 className="text-3xl md:text-5xl font-black text-brand-dark mb-4 tracking-tighter">What Our Neighbors Are Saying</h2>
+            <p className="text-lg text-gray-500 font-medium">Real feedback from homeowners across Montgomery County, MD.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-8">

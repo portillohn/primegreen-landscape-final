@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import FadeIn from "@/components/FadeIn";
 import { Check, MapPin, Star, ShieldCheck, Leaf, Clock, CreditCard, ChevronRight, Zap } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -88,29 +87,28 @@ export default function LawnMowingPage() {
       />
       
       {/* 1. Hero Section */}
-      <section className="relative pt-32 pb-24 bg-brand-dark overflow-hidden text-inter">
+      <section className="relative min-h-[52vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="/images/hero.png" alt="Perfectly mowed green lawn" fill className="object-cover opacity-20" priority />
-          <div className="absolute inset-0 bg-brand-dark/80" />
+          <Image src="/images/services/push-mower-residential-lawn-mowing-maryland.webp" alt="Perfectly mowed green lawn" fill className="object-cover object-center" priority />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/75 to-brand-dark/50" />
         </div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-32 pb-24">
           <Breadcrumbs items={[{ label: "Lawn Mowing", href: "/lawn-mowing" }]} />
-          
-          <div className="text-center text-white mt-12">
-              <span className="text-brand-accent font-black tracking-widest text-sm mb-4 block uppercase leading-none italic">Elite Residential Care</span>
-              <h1 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter leading-tight">Professional Lawn Mowing <br className="hidden md:block" /> in Montgomery County</h1>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10 font-light leading-relaxed">
-                We don&apos;t just cut grass—we manage turf health. Our exclusive <strong>push-mower approach</strong> is designed for homeowners who value precision, soil protection, and ultimate curb appeal.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                <Link href="/contact" className="w-full sm:w-auto bg-brand-accent text-white px-10 py-5 rounded-xl font-black hover:bg-white hover:text-brand-dark transition-all shadow-xl transform hover:-translate-y-1">
-                  Get My Free Estimate
-                </Link>
-              </div>
-            </div>
+          <div className="mt-6 max-w-2xl">
+            <span className="text-brand-accent font-bold tracking-widest text-xs mb-3 block uppercase">Elite Residential Care</span>
+            <h1 className="text-4xl md:text-6xl font-black text-white mb-5 leading-tight tracking-tighter">
+              Professional Lawn Mowing<br className="hidden md:block" /> in Montgomery County
+            </h1>
+            <p className="text-lg text-gray-200 font-light max-w-xl leading-relaxed mb-8">
+              We don&apos;t just cut grass—we manage turf health. Our exclusive <strong>push-mower approach</strong> is designed for homeowners who value precision, soil protection, and ultimate curb appeal.
+            </p>
+            <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-brand-accent text-white font-black rounded-xl hover:bg-white hover:text-brand-dark transition-all shadow-xl transform hover:-translate-y-0.5">
+              Get My Free Estimate
+            </Link>
+          </div>
         </div>
       </section>
+
 
       {/* 2. Benefits Grid */}
       <section className="py-24 bg-white">
@@ -153,7 +151,7 @@ export default function LawnMowingPage() {
             <div className="relative">
               <div className="absolute -inset-4 bg-white rounded-[2rem] shadow-2xl z-0" />
               <div className="relative z-10 aspect-square rounded-2xl overflow-hidden border-8 border-white shadow-lg">
-                <Image src="/images/after.png" alt="Perfect lawn stripes" fill className="object-cover" />
+                <Image src="/images/services/lawn-mowing-detail-striped-lawn-maryland.webp" alt="Detailed striped lawn finish after residential mowing service" fill className="object-cover" />
               </div>
             </div>
           </div>

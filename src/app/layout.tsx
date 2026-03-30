@@ -4,6 +4,7 @@ import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { GoogleTagManager } from '@next/third-parties/google'
+import { siteConfig } from '@/lib/siteConfig'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -11,31 +12,46 @@ const inter = Inter({
   variable: '--font-inter',
 })
 
+const ogImage = `${siteConfig.url}${siteConfig.primaryOgImage}`
+
 export const metadata: Metadata = {
   title: {
     default: 'Prime Green Landscape LLC | Lawn Care Montgomery County MD',
     template: '%s | Prime Green Landscape LLC',
   },
   description:
-    'Professional residential lawn mowing in Montgomery County, MD. ' +
-    'Push mower specialists. Free quotes. Online billing via Yardbook.',
-  metadataBase: new URL('https://www.primegreenlandscape.com'),
+    'Premium residential lawn mowing, mulching, edging, and seasonal cleanup in Montgomery County, MD. Push mower specialists serving Montgomery Village, Gaithersburg, Rockville, Germantown, Bethesda, and Silver Spring.',
+  metadataBase: new URL(siteConfig.url),
   alternates: {
     canonical: '/',
   },
   icons: {
     icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
   },
   openGraph: {
-    siteName: 'Prime Green Landscape LLC',
+    siteName: siteConfig.name,
     locale: 'en_US',
     type: 'website',
-    url: 'https://www.primegreenlandscape.com',
+    url: siteConfig.url,
+    title: 'Prime Green Landscape LLC | Premium Lawn Care in Montgomery County, MD',
+    description:
+      'Professional residential lawn mowing, mulch installation, yard cleanup, and edging for Montgomery County homeowners.',
+    images: [
+      {
+        url: ogImage,
+        width: 1600,
+        height: 900,
+        alt: 'Prime Green Landscape LLC premium lawn care in Montgomery County, Maryland',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Prime Green Landscape LLC | Precision Lawn Care',
-    description: 'Professional residential lawn mowing and landscape maintenance in Montgomery County, MD.',
+    title: 'Prime Green Landscape LLC | Premium Lawn Care in Montgomery County, MD',
+    description:
+      'Push mower specialists for premium residential lawn care, mulching, and cleanup in Montgomery County.',
+    images: [ogImage],
   },
 }
 
@@ -45,77 +61,68 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   const businessSchema = {
-    "@context": "https://schema.org",
-    "@graph": [
+    '@context': 'https://schema.org',
+    '@graph': [
       {
-        "@type": "LocalBusiness",
-        "@id": "https://primegreenlandscape.com/#localbusiness",
-        "name": "Prime Green Landscape LLC",
-        "image": "https://primegreenlandscape.com/images/logo.png",
-        "url": "https://primegreenlandscape.com",
-        "telephone": "(571) 405-0031",
-        "priceRange": "$$",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Montgomery Village",
-          "addressLocality": "Montgomery Village",
-          "addressRegion": "MD",
-          "postalCode": "20879",
-          "addressCountry": "US"
+        '@type': 'LocalBusiness',
+        '@id': `${siteConfig.url}/#localbusiness`,
+        name: siteConfig.name,
+        image: ogImage,
+        url: siteConfig.url,
+        telephone: siteConfig.phoneRaw,
+        email: siteConfig.email,
+        priceRange: '$$',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: siteConfig.address.city,
+          addressLocality: siteConfig.address.city,
+          addressRegion: siteConfig.address.state,
+          postalCode: siteConfig.address.zip,
+          addressCountry: siteConfig.address.country,
         },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 39.1754,
-          "longitude": -77.2011
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: 39.1754,
+          longitude: -77.2011,
         },
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday"
-          ],
-          "opens": "07:00",
-          "closes": "18:00"
+        openingHoursSpecification: {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+          opens: '07:00',
+          closes: '18:00',
         },
-        "areaServed": [
-          { "@type": "City", "name": "Montgomery Village" },
-          { "@type": "City", "name": "Gaithersburg" },
-          { "@type": "City", "name": "Rockville" },
-          { "@type": "City", "name": "Germantown" },
-          { "@type": "City", "name": "Bethesda" },
-          { "@type": "City", "name": "Silver Spring" }
-        ]
+        areaServed: siteConfig.serviceAreas.map((city) => ({ '@type': 'City', name: city })),
+        sameAs: [siteConfig.social.facebook, siteConfig.social.instagram],
       },
       {
-        "@type": "Organization",
-        "@id": "https://primegreenlandscape.com/#organization",
-        "name": "Prime Green Landscape LLC",
-        "url": "https://primegreenlandscape.com",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://primegreenlandscape.com/images/logo.png"
+        '@type': 'Organization',
+        '@id': `${siteConfig.url}/#organization`,
+        name: siteConfig.name,
+        url: siteConfig.url,
+        logo: {
+          '@type': 'ImageObject',
+          url: `${siteConfig.url}/images/logo.png`,
         },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "(571) 405-0031",
-          "contactType": "customer service"
-        }
+        contactPoint: {
+          '@type': 'ContactPoint',
+          telephone: siteConfig.phoneRaw,
+          email: siteConfig.email,
+          contactType: 'customer service',
+          areaServed: 'US-MD',
+          availableLanguage: 'en',
+        },
       },
       {
-        "@type": "WebSite",
-        "@id": "https://primegreenlandscape.com/#website",
-        "url": "https://primegreenlandscape.com",
-        "name": "Prime Green Landscape LLC",
-        "publisher": {
-          "@id": "https://primegreenlandscape.com/#organization"
-        }
-      }
-    ]
-  };
+        '@type': 'WebSite',
+        '@id': `${siteConfig.url}/#website`,
+        url: siteConfig.url,
+        name: siteConfig.name,
+        publisher: {
+          '@id': `${siteConfig.url}/#organization`,
+        },
+      },
+    ],
+  }
 
   return (
     <html lang="en" className={inter.variable}>
@@ -127,7 +134,6 @@ export default function RootLayout({
         />
       </head>
       <body>
-        {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-WTWV8FZW"

@@ -1,13 +1,26 @@
 import { Metadata } from "next";
+import Image from "next/image";
+import { siteConfig } from "@/lib/siteConfig";
 import Link from "next/link";
-import FadeIn from "@/components/FadeIn";
 import FAQAccordion from "@/components/FAQAccordion";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { Check, ClipboardList, Home, ShieldCheck, ThumbsUp, Wallet, ChevronRight, Star } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Professional Lawn Care & Mowing Services | Montgomery County, MD",
-  description: "Elite residential lawn care in Montgomery County, MD. Professional push mower service, mulching, weed removal, and yard cleanups. Transparent tiered pricing.",
+  description: "Elite residential lawn care in Montgomery County, MD. Professional push mower service, mulching, weed removal, edging, and yard cleanups. Transparent tiered pricing.",
+  openGraph: {
+    images: [{
+      url: `${siteConfig.url}/images/services/professional-lawn-care-services-montgomery-county.webp`,
+      width: 1600,
+      height: 900,
+      alt: 'Prime Green Landscape lawn care services in Montgomery County, Maryland',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: [`${siteConfig.url}/images/services/professional-lawn-care-services-montgomery-county.webp`],
+  },
 };
 
 const serviceTiers = [
@@ -81,22 +94,34 @@ export default function ServicesPage() {
       />
       
       {/* HERO SECTION */}
-      <section className="relative pt-32 pb-24 bg-brand-dark overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-brand-accent/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <section className="relative min-h-[52vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/services/professional-lawn-care-services-montgomery-county.webp"
+            alt="Professional lawn care services in Montgomery County"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/75 to-brand-dark/50" />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-32 pb-24">
           <Breadcrumbs items={[{ label: "Services", href: "/services" }]} />
-          
-          <div className="text-center mt-12">
-            <span className="text-brand-accent font-black tracking-widest text-sm mb-4 block uppercase leading-none">Comprehensive Maintenance</span>
-            <h1 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight tracking-tighter">
-              Elite Residential Lawn Services
+          <div className="mt-6 max-w-2xl">
+            <span className="text-brand-accent font-bold tracking-widest text-xs mb-3 block uppercase">Comprehensive Maintenance</span>
+            <h1 className="text-4xl md:text-6xl font-black text-white mb-5 leading-tight tracking-tighter">
+              Elite Residential<br className="hidden md:block" /> Lawn Services
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 font-light max-w-3xl mx-auto mb-10 leading-relaxed">
-              From precision push mowing to expert seasonal cleanup. <br className="hidden md:block" /> Professional care for Montgomery County&apos;s finest properties.
+            <p className="text-lg md:text-xl text-gray-200 font-light max-w-xl leading-relaxed mb-8">
+              From precision push mowing to expert seasonal cleanup — professional care for Montgomery County&apos;s finest properties.
             </p>
+            <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-brand-accent text-white font-black rounded-xl hover:bg-white hover:text-brand-dark transition-all shadow-xl transform hover:-translate-y-0.5">
+              Get My Free Quote
+            </Link>
           </div>
         </div>
       </section>
+
 
       {/* CORE SERVICE TIERS */}
       <section className="py-24 bg-brand-bg border-b border-gray-200">
@@ -270,10 +295,10 @@ export default function ServicesPage() {
       
       {/* GLOBAL CTA */}
       <section className="bg-brand-mid py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/hero.png')] opacity-10 bg-cover bg-center" />
+        <div className="absolute inset-0 bg-[url('/images/services/services-cta-premium-montgomery-county.webp')] opacity-10 bg-cover bg-center" />
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
           <h2 className="text-3xl md:text-6xl font-black text-white mb-8 tracking-tighter leading-tight">Elite Landscape Care Is One Quote Away</h2>
-          <p className="text-xl text-white/80 font-light mb-12 italic">Precision. Reliability. Professionalism. Serving Montgomery County since 20XX.</p>
+          <p className="text-xl text-white/80 font-light mb-12 italic">Precision. Reliability. Professionalism. Serving Montgomery County since {siteConfig.serviceSinceYear}.</p>
           <Link href="/contact" className="inline-block px-12 py-6 bg-white text-brand-dark font-black rounded-xl hover:bg-brand-dark hover:text-white transition-all shadow-2xl text-xl transform hover:scale-105">
             Request My Free Quote Now
           </Link>
