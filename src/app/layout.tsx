@@ -22,13 +22,6 @@ export const metadata: Metadata = {
   description:
     'Premium residential lawn mowing, mulching, edging, and seasonal cleanup in Montgomery County, MD. Push mower specialists serving Montgomery Village, Gaithersburg, Rockville, Germantown, Bethesda, and Silver Spring.',
   metadataBase: new URL(siteConfig.url),
-  alternates: {
-    canonical: '/',
-  },
-  icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-  },
   openGraph: {
     siteName: siteConfig.name,
     locale: 'en_US',
@@ -74,7 +67,6 @@ export default function RootLayout({
         priceRange: '$$',
         address: {
           '@type': 'PostalAddress',
-          streetAddress: siteConfig.address.city,
           addressLocality: siteConfig.address.city,
           addressRegion: siteConfig.address.state,
           postalCode: siteConfig.address.zip,

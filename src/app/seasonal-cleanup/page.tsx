@@ -8,6 +8,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Spring & Fall Seasonal Cleanup | Montgomery County, MD",
   description: "Specialized seasonal cleanup in Gaithersburg, Rockville, and Bethesda. Expert leaf removal, perennial prep, and winterization to protect your Maryland landscape. Free quotes.",
+  alternates: { canonical: '/seasonal-cleanup' },
 };
 
 const benefits = [

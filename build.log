@@ -1,46 +1,54 @@
 
-> temp-app@0.1.0 build
+> prime-green-landscape@0.1.0 build
 > next build
 
-  ▲ Next.js 14.2.35
+  ▲ Next.js 14.2.5
+  - Environments: .env.local
 
    Creating an optimized production build ...
  ✓ Compiled successfully
    Linting and checking validity of types ...
    Collecting page data ...
-   Generating static pages (0/23) ...
-   Generating static pages (5/23) 
-   Generating static pages (11/23) 
-   Generating static pages (17/23) 
- ✓ Generating static pages (23/23)
+   Generating static pages (0/33) ...
+   Generating static pages (8/33) 
+   Generating static pages (16/33) 
+   Generating static pages (24/33) 
+ ✓ Generating static pages (33/33)
    Finalizing page optimization ...
    Collecting build traces ...
 
 Route (app)                                                   Size     First Load JS
-┌ ○ /                                                         1.37 kB         103 kB
-├ ○ /_not-found                                               873 B          88.3 kB
-├ ○ /about                                                    1.36 kB        97.4 kB
+┌ ○ /                                                         806 B           134 kB
+├ ○ /_not-found                                               871 B          87.9 kB
+├ ○ /about                                                    189 B          99.1 kB
 ├ ƒ /api/contact                                              0 B                0 B
-├ ● /areas/[city]                                             1.36 kB        97.4 kB
+├ ● /areas/[city]                                             806 B           134 kB
 ├   ├ /areas/montgomery-village
 ├   ├ /areas/gaithersburg
 ├   ├ /areas/rockville
 ├   └ [+3 more paths]
-├ ○ /blog                                                     1.37 kB         103 kB
-├ ● /blog/[slug]                                              187 B           101 kB
+├ ○ /blog                                                     189 B          99.1 kB
+├ ● /blog/[slug]                                              189 B          99.1 kB
 ├   ├ /blog/best-time-to-mow-lawn-montgomery-county-maryland
 ├   ├ /blog/push-mower-advantage-better-lawn-cut
-├   └ /blog/how-often-mow-lawn-gaithersburg-md
-├ ○ /contact                                                  5.51 kB         102 kB
-├ ○ /privacy                                                  142 B          87.5 kB
+├   ├ /blog/how-often-mow-lawn-gaithersburg-md
+├   └ [+4 more paths]
+├ ○ /contact                                                  2.07 kB        95.9 kB
+├ ○ /edging-trimming                                          806 B           134 kB
+├ ○ /lawn-mowing                                              806 B           134 kB
+├ ○ /mulching                                                 806 B           134 kB
+├ ○ /privacy                                                  141 B          87.2 kB
 ├ ○ /robots.txt                                               0 B                0 B
-├ ○ /services                                                 50.4 kB         146 kB
+├ ○ /seasonal-cleanup                                         806 B           134 kB
+├ ○ /services                                                 806 B           134 kB
 ├ ○ /sitemap.xml                                              0 B                0 B
-└ ○ /terms                                                    142 B          87.5 kB
-+ First Load JS shared by all                                 87.4 kB
-  ├ chunks/117-4f5b424f20efdcae.js                            31.7 kB
-  ├ chunks/fd9d1056-b11b2651f33aae7f.js                       53.6 kB
-  └ other shared chunks (total)                               2.01 kB
+├ ○ /terms                                                    141 B          87.2 kB
+├ ○ /weed-removal                                             806 B           134 kB
+└ ○ /yard-cleanup                                             806 B           134 kB
++ First Load JS shared by all                                 87.1 kB
+  ├ chunks/23-68b493f91180a142.js                             31.5 kB
+  ├ chunks/fd9d1056-00bb33a35b5f8051.js                       53.6 kB
+  └ other shared chunks (total)                               1.89 kB
 
 
 ○  (Static)   prerendered as static content

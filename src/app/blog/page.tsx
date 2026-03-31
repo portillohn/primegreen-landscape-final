@@ -17,6 +17,7 @@ export const metadata: Metadata = {
       alt: 'Prime Green Landscape lawn care blog cover image',
     }],
   },
+  alternates: { canonical: '/blog' },
 };
 
 const jsonLd = {

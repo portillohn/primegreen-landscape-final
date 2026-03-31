@@ -1,71 +1,90 @@
 import { MetadataRoute } from 'next';
 import { serviceAreasData } from '@/lib/data';
 import { blogPosts } from '@/lib/blogData';
+import { siteConfig } from '@/lib/siteConfig';
+
+const BASE_URL = siteConfig.url;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://primegreenlandscape.com';
+  const now = new Date();
 
-  const cities = Object.keys(serviceAreasData).map((city) => ({
-    url: `${baseUrl}/areas/${city}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.7,
-  }));
+  const staticPages = [
+    {
+      url: BASE_URL,
+      lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority: 1.0,
+    },
+    {
+      url: `${BASE_URL}/services`,
+      lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/about`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/contact`,
+      lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/blog`,
+      lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/privacy`,
+      lastModified: now,
+      changeFrequency: 'yearly' as const,
+      priority: 0.3,
+    },
+    {
+      url: `${BASE_URL}/terms`,
+      lastModified: now,
+      changeFrequency: 'yearly' as const,
+      priority: 0.3,
+    },
+  ];
 
-  const blogs = Object.keys(blogPosts).map((slug) => ({
-    url: `${baseUrl}/blog/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.6,
-  }));
-
-  const services = [
+  const servicePages = [
     'lawn-mowing',
     'mulching',
     'yard-cleanup',
     'weed-removal',
     'edging-trimming',
-    'seasonal-cleanup'
+    'seasonal-cleanup',
   ].map((service) => ({
-    url: `${baseUrl}/${service}`,
-    lastModified: new Date(),
+    url: `${BASE_URL}/${service}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.9,
+  }));
+
+  const areaPages = Object.keys(serviceAreasData).map((city) => ({
+    url: `${BASE_URL}/areas/${city}`,
+    lastModified: now,
+    changeFrequency: 'weekly' as const,
+    priority: 0.9,
+  }));
+
+  const blogPages = Object.keys(blogPosts).map((slug) => ({
+    url: `${BASE_URL}/blog/${slug}`,
+    lastModified: now,
     changeFrequency: 'monthly' as const,
     priority: 0.8,
   }));
 
   return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/services`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/blog`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    ...services,
-    ...cities,
-    ...blogs,
+    ...staticPages,
+    ...servicePages,
+    ...areaPages,
+    ...blogPages,
   ];
 }

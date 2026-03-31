@@ -50,18 +50,18 @@ export default function Header() {
     setMobileAreasOpen(false)
   }, [pathname])
 
-  const bg = scrolled ? 'bg-white/97 backdrop-blur-md shadow-md' : 'bg-white shadow-sm'
+  const bg = scrolled ? 'bg-white/95 backdrop-blur-md shadow-md' : 'bg-white shadow-sm'
 
   const navLinkClass = (href: string) =>
     `text-sm font-semibold transition-all duration-200 px-1 py-0.5 rounded ${
       isActive(href)
-        ? 'text-green-700 border-b-2 border-green-600'
-        : 'text-gray-600 hover:text-green-700 border-b-2 border-transparent'
+        ? 'text-brand-dark border-b-2 border-brand-accent text-brand-dark'
+        : 'text-gray-600 hover:text-brand-dark border-b-2 border-transparent'
     }`
 
   const mobileLinkClass = (href: string) =>
     `py-3.5 border-b border-gray-100 font-semibold text-sm transition-colors flex items-center justify-between ${
-      isActive(href) ? 'text-green-700' : 'text-gray-700 hover:text-green-700'
+      isActive(href) ? 'text-brand-dark' : 'text-gray-700 hover:text-brand-dark'
     }`
 
   return (
@@ -100,7 +100,7 @@ export default function Header() {
                 aria-haspopup="menu"
                 aria-controls="areas-dropdown-menu"
                 id="areas-dropdown-button"
-                className="flex items-center gap-1 text-sm font-semibold transition-all duration-200 text-gray-600 hover:text-green-700 border-b-2 border-transparent px-1 py-0.5 rounded"
+                className="flex items-center gap-1 text-sm font-semibold transition-all duration-200 text-gray-600 hover:text-brand-dark border-b-2 border-transparent px-1 py-0.5 rounded"
               >
                 Areas
                 <svg
@@ -125,9 +125,9 @@ export default function Header() {
                     }
                   }}
                 >
-                  <div className="px-4 py-3 bg-green-50 border-b border-green-100">
-                    <p className="text-[10px] font-black uppercase tracking-widest text-green-700">📍 Service Areas</p>
-                    <p className="text-xs text-green-600 mt-0.5">Montgomery County, MD</p>
+                  <div className="px-4 py-3 bg-brand-bg border-b border-brand-accent/20">
+                    <p className="text-[10px] font-black uppercase tracking-widest text-brand-dark">📍 Service Areas</p>
+                    <p className="text-xs text-brand-mid mt-0.5">Montgomery County, MD</p>
                   </div>
                   <div className="py-1.5" role="none">
                     {cities.map((city) => (
@@ -142,13 +142,13 @@ export default function Header() {
                             document.getElementById('areas-dropdown-button')?.focus()
                           }
                         }}
-                        className="flex items-center gap-3 px-4 py-2.5 hover:bg-green-50 transition-colors group"
+                        className="flex items-center gap-3 px-4 py-2.5 hover:bg-brand-bg transition-colors group"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-green-400 group-hover:bg-green-600 transition-colors flex-shrink-0" aria-hidden="true"/>
-                        <span className="text-sm text-gray-700 group-hover:text-green-800 font-medium">
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand-accent group-hover:bg-brand-mid transition-colors flex-shrink-0" aria-hidden="true"/>
+                        <span className="text-sm text-gray-700 group-hover:text-brand-dark font-medium">
                           {city.name}
                         </span>
-                        <svg className="w-3.5 h-3.5 text-gray-300 group-hover:text-green-500 ml-auto transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <svg className="w-3.5 h-3.5 text-gray-300 group-hover:text-brand-accent ml-auto transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
                         </svg>
                       </Link>
@@ -165,7 +165,7 @@ export default function Header() {
                           document.getElementById('areas-dropdown-button')?.focus()
                         }
                       }}
-                      className="text-xs font-bold text-green-700 hover:text-green-900 flex items-center gap-1.5"
+                      className="text-xs font-bold text-brand-dark hover:text-brand-mid flex items-center gap-1.5"
                     >
                       <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
@@ -186,7 +186,7 @@ export default function Header() {
             <a
               href="sms:+15714050031?body=Hello%2C%20I%27d%20like%20a%20free%20quote"
               aria-label="Text us at (571) 405-0031"
-              className="text-sm font-semibold text-green-800 hover:text-green-600 transition-colors flex items-center gap-1.5"
+              className="text-sm font-semibold text-brand-dark hover:text-brand-mid transition-colors flex items-center gap-1.5"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
@@ -196,7 +196,7 @@ export default function Header() {
             </a>
             <Link
               href="/contact"
-              className="px-5 py-2.5 rounded-lg text-sm font-bold transition-all duration-200 bg-green-600 text-white hover:bg-green-700 shadow-sm hover:shadow-md"
+              className="px-5 py-2.5 rounded-lg text-sm font-bold transition-all duration-200 bg-brand-accent text-white hover:bg-brand-mid shadow-sm hover:shadow-md"
             >
               Free Quote
             </Link>
@@ -205,7 +205,7 @@ export default function Header() {
           {/* Mobile hamburger */}
           <button
             onClick={() => setMenuOpen(o => !o)}
-            className="md:hidden p-2 text-gray-700 hover:text-green-700 transition-colors rounded-lg"
+            className="md:hidden p-2 text-gray-700 hover:text-brand-dark transition-colors rounded-lg"
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={menuOpen}
           >
@@ -252,9 +252,9 @@ export default function Header() {
                       key={city.slug}
                       href={`/areas/${city.slug}`}
                       onClick={() => { setMobileAreasOpen(false); setMenuOpen(false) }}
-                      className="flex items-center gap-2 py-2.5 text-sm text-green-800 font-medium hover:text-green-600"
+                      className="flex items-center gap-2 py-2.5 text-sm text-brand-dark font-medium hover:text-brand-mid"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-green-400 flex-shrink-0"/>
+                      <span className="w-1.5 h-1.5 rounded-full bg-brand-accent flex-shrink-0"/>
                       {city.name}
                     </Link>
                   ))}
@@ -268,14 +268,14 @@ export default function Header() {
             <div className="pt-5 pb-6 flex flex-col gap-3">
               <a
                 href="sms:+15714050031?body=Hello%2C%20I%27d%20like%20a%20free%20quote"
-                className="text-green-700 font-bold text-sm flex gap-2 items-center"
+                className="text-brand-dark font-bold text-sm flex gap-2 items-center"
               >
                 💬 Text: (571) 405-0031
               </a>
               <Link
                 href="/contact"
                 onClick={() => setMenuOpen(false)}
-                className="bg-green-600 text-white text-center py-3.5 rounded-xl font-bold text-sm hover:bg-green-700 transition-colors shadow-sm"
+                className="bg-brand-accent text-white text-center py-3.5 rounded-xl font-bold text-sm hover:bg-brand-mid transition-colors shadow-sm"
               >
                 Get Free Quote
               </Link>

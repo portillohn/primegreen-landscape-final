@@ -16,6 +16,7 @@ export const metadata: Metadata = {
       alt: 'About Prime Green Landscape LLC in Montgomery County, Maryland',
     }],
   },
+  alternates: { canonical: '/about' },
 };
 
 const jsonLd = {

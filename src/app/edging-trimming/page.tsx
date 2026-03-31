@@ -8,6 +8,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Precision Edging & Trimming Services | Montgomery County, MD",
   description: "Elite mechanical edging and string trimming in Gaithersburg, Rockville, and Potomac. Define your walkways and garden beds with razor-sharp precision. Free quotes.",
+  alternates: { canonical: '/edging-trimming' },
 };
 
 const benefits = [

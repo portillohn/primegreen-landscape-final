@@ -8,6 +8,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Professional Yard Cleanup Services | Montgomery County, MD",
   description: "Comprehensive residential yard cleanup in Gaithersburg, Rockville, and Germantown. We remove debris, clear overgrowth, and restore your property's beauty. Free quotes.",
+  alternates: { canonical: '/yard-cleanup' },
 };
 
 const benefits = [

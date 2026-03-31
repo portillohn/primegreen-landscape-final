@@ -8,6 +8,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Professional Lawn Mowing Services | Montgomery County, MD",
   description: "Precision push mower lawn mowing in Gaithersburg, Rockville, and Potomac. Elite residential care that protects your soil and boosts curb appeal. Free quotes.",
+  alternates: { canonical: '/lawn-mowing' },
 };
 
 const benefits = [

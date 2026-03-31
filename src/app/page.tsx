@@ -45,7 +45,6 @@ const jsonLd = {
       "email": "kevin@primegreenlandscape.com",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Montgomery Village",
         "addressLocality": "Montgomery Village",
         "addressRegion": "MD",
         "postalCode": "20879",
@@ -139,7 +138,7 @@ export default function Home() {
           <div className="inline-block bg-brand-accent/20 backdrop-blur-md border border-brand-accent/30 px-6 py-2 rounded-full mb-6 md:mb-8 transition-transform hover:scale-105 cursor-default">
             <span className="text-white font-bold tracking-widest text-xs md:text-sm uppercase italic leading-none">Montgomery County&apos;s Push Mower Specialists</span>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight md:leading-[1.1] mt-2 mb-6 md:mb-8 tracking-tighter">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight md:leading-[1.1] mt-2 mb-6 md:mb-8 tracking-tighter">
             Professional Residential Lawn Mowing <br className="hidden lg:block" /> in Montgomery County, MD
           </h1>
           <p className="text-base md:text-lg lg:text-xl text-gray-100 font-light max-w-2xl mx-auto mb-8 md:mb-10 leading-relaxed italic opacity-90">
@@ -194,9 +193,9 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { icon: Target,   title: "Precision Cuts",       color: "text-green-700",  body: "Push mowers give our crew complete control over every pass. No scalping, no uneven lines, no missed corners. Your lawn looks like it belongs on a magazine cover — every single visit." },
-              { icon: Sprout,   title: "Healthier Grass",      color: "text-green-700",  body: "Heavy zero-turn riders compact your soil over time, damaging root systems and killing grass from below. Our lightweight push mowers protect soil structure and promote thick, lush growth season after season." },
-              { icon: HomeIcon, title: "HOA-Approved Results", color: "text-green-700",  body: "Montgomery County HOAs have strict curb appeal standards. Our detail-oriented approach — crisp edges, clean lines, zero debris left behind — keeps your property in full compliance and your neighbors envious." },
+              { icon: Target,   title: "Precision Cuts",       color: "text-brand-accent",  body: "Push mowers give our crew complete control over every pass. No scalping, no uneven lines, no missed corners. Your lawn looks like it belongs on a magazine cover — every single visit." },
+              { icon: Sprout,   title: "Healthier Grass",      color: "text-brand-accent",  body: "Heavy zero-turn riders compact your soil over time, damaging root systems and killing grass from below. Our lightweight push mowers protect soil structure and promote thick, lush growth season after season." },
+              { icon: HomeIcon, title: "HOA-Approved Results", color: "text-brand-accent",  body: "Montgomery County HOAs have strict curb appeal standards. Our detail-oriented approach — crisp edges, clean lines, zero debris left behind — keeps your property in full compliance and your neighbors envious." },
             ].map(({ icon: Icon, title, color, body }) => (
               <div key={title} className="p-8 rounded-2xl bg-brand-bg border border-gray-100 shadow-sm hover:shadow-md transition-shadow group">
                 <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-brand-accent group-hover:text-white transition-all duration-200">

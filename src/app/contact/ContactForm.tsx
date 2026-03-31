@@ -42,9 +42,9 @@ export default function ContactForm() {
   }
 
   const inp = `w-full h-14 px-4 text-base border border-gray-300
-    rounded-xl bg-white placeholder-gray-400 text-gray-900
-    focus:outline-none focus:border-green-500
-    focus:ring-2 focus:ring-green-500/20 transition-colors`
+    rounded-xl bg-white placeholder-gray-500 text-gray-900
+    focus:outline-none focus:border-brand-accent
+    focus:ring-2 focus:ring-brand-accent/20 transition-colors`
 
   const lbl = `block text-sm font-semibold text-gray-700 mb-1.5`
 
@@ -54,9 +54,9 @@ export default function ContactForm() {
 
       {success ? (
         <div className="text-center py-12">
-          <div className="w-20 h-20 bg-green-100 rounded-full
+          <div className="w-20 h-20 bg-brand-bg rounded-full
             flex items-center justify-center mx-auto mb-6">
-            <svg className="w-10 h-10 text-green-600"
+            <svg className="w-10 h-10 text-brand-mid"
               fill="none" stroke="currentColor"
               viewBox="0 0 24 24">
               <path strokeLinecap="round"
@@ -64,7 +64,7 @@ export default function ContactForm() {
                 d="M5 13l4 4L19 7"/>
             </svg>
           </div>
-          <h2 className="text-2xl font-black text-green-900 mb-3">
+          <h2 className="text-2xl font-black text-brand-dark mb-3">
             Quote Request Received! 🌿
           </h2>
           <p className="text-gray-600 mb-1">
@@ -79,7 +79,7 @@ export default function ContactForm() {
         <>
           <div className="mb-8">
             <h2 className="text-2xl font-black
-              text-green-900 mb-1">
+              text-brand-dark mb-1">
               Request a Free Quote
             </h2>
             <p className="text-sm text-gray-500">
@@ -192,7 +192,7 @@ export default function ContactForm() {
 
             {/* Submit */}
             <button type="submit" disabled={loading}
-              className="w-full bg-green-600 hover:bg-green-700
+              className="w-full bg-brand-accent hover:bg-brand-mid
                 disabled:opacity-60 text-white font-bold
                 text-lg py-4 rounded-xl transition-colors
                 flex items-center justify-center gap-2">

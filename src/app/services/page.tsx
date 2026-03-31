@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     images: [`${siteConfig.url}/images/services/professional-lawn-care-services-montgomery-county.webp`],
   },
+  alternates: { canonical: '/services' },
 };
 
 const serviceTiers = [

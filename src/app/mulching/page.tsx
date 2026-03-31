@@ -8,6 +8,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Professional Mulching Services | Montgomery County, MD",
   description: "Elite residential mulching in Gaithersburg, Rockville, and Potomac. Triple-shredded hardwood mulch to protect soil, suppress weeds, and boost curb appeal. Free quotes.",
+  alternates: { canonical: '/mulching' },
 };
 
 const benefits = [

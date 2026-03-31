@@ -5,6 +5,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 export const metadata: Metadata = {
   title: 'Contact Us | Free Lawn Care Quote',
   description: 'Request your free residential lawn care quote in Montgomery County. We respond within 2 hours. Serving Gaithersburg, Rockville, and Montgomery Village.',
+  alternates: { canonical: '/contact' },
 }
 
 const jsonLd = {
@@ -42,7 +43,7 @@ export default function ContactPage() {
       />
       
       {/* HERO */}
-      <section className="bg-[#1A4D1E] pt-32 pb-12">
+      <section className="bg-brand-dark pt-32 pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: "Contact", href: "/contact" }]} />
           
@@ -50,7 +51,7 @@ export default function ContactPage() {
             <h1 className="text-3xl md:text-4xl font-black text-white mb-3">
               Get Your Free Lawn Care Quote
             </h1>
-            <p className="text-green-200 text-lg">
+            <p className="text-brand-accent text-lg">
               5-second form · We call you back · No obligation
             </p>
           </div>
@@ -71,8 +72,8 @@ export default function ContactPage() {
             {/* Phone CTA */}
             <a href="sms:+15714050031?body=Hello%2C%20I%27d%20like%20a%20free%20quote"
               aria-label="Send SMS to (571) 405-0031"
-              className="flex items-center gap-4 bg-green-600
-                hover:bg-green-700 text-white rounded-2xl p-5
+              className="flex items-center gap-4 bg-brand-accent
+                hover:bg-brand-mid text-white rounded-2xl p-5
                 transition-colors">
               <div className="w-12 h-12 bg-white/20 rounded-full
                 flex-shrink-0 flex items-center justify-center">
@@ -120,7 +121,7 @@ export default function ContactPage() {
                     {href
                       ? <a href={href}
                           className="text-sm font-semibold
-                            text-green-700 hover:underline break-all">
+                            text-brand-mid hover:underline break-all">
                           {val}
                         </a>
                       : <p className="text-sm font-semibold
@@ -143,8 +144,8 @@ export default function ContactPage() {
                   'Germantown','Bethesda','Silver Spring'
                 ].map(c => (
                   <span key={c} className="text-xs font-semibold
-                    bg-green-50 text-green-800 border
-                    border-green-100 rounded-full px-3 py-1.5">
+                    bg-brand-bg text-brand-dark border
+                    border-brand-accent/20 rounded-full px-3 py-1.5">
                     {c}
                   </span>
                 ))}

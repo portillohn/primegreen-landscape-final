@@ -8,6 +8,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Professional Manual Weed Removal | Montgomery County, MD",
   description: "Elite hand-weeding services in Gaithersburg, Rockville, and Potomac. We prioritize root extraction and organic bed care to protect your ornamental plants. Free quotes.",
+  alternates: { canonical: '/weed-removal' },
 };
 
 const benefits = [
