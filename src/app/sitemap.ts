@@ -60,6 +60,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'weed-removal',
     'edging-trimming',
     'seasonal-cleanup',
+    'services/lawn-mowing-service-near-me',
   ].map((service) => ({
     url: `${BASE_URL}/${service}`,
     lastModified: now,

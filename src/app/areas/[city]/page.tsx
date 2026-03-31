@@ -187,7 +187,7 @@ export default function CityAreaPage({ params }: { params: { city: string } }) {
                 Superior Lawn Care Tailored for {cityData.name}
               </h2>
               <p className="text-gray-600 leading-relaxed text-lg mb-10">
-                {cityData.description}
+                {cityData.description} If you&apos;re searching for a premium <Link href="/services/lawn-mowing-service-near-me" className="text-brand-mid font-bold hover:underline">lawn mowing service near me</Link> in {cityData.name}, our push mower teams are ready to help.
               </p>
               
               <div className="grid gap-6 mb-10">

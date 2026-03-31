@@ -13,7 +13,7 @@ const quickLinks = [
 ]
 
 const services = [
-  { label: 'Lawn Mowing',       href: '/lawn-mowing' },
+  { label: 'Lawn Mowing',       href: '/services/lawn-mowing-service-near-me' },
   { label: 'Mulching',          href: '/mulching' },
   { label: 'Yard Cleanup',      href: '/yard-cleanup' },
   { label: 'Weed Removal',      href: '/weed-removal' },

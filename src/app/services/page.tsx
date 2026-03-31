@@ -172,7 +172,7 @@ export default function ServicesPage() {
           </div>
           
           <div className="mt-16 text-center">
-            <Link href="/lawn-mowing" className="inline-flex items-center gap-2 text-brand-mid font-black hover:gap-4 transition-all group px-6 py-3 rounded-full bg-brand-mid/5 hover:bg-brand-mid/10">
+            <Link href="/services/lawn-mowing-service-near-me" className="inline-flex items-center gap-2 text-brand-mid font-black hover:gap-4 transition-all group px-6 py-3 rounded-full bg-brand-mid/5 hover:bg-brand-mid/10">
               Deep-Dive: Why our push mower process is superior <ChevronRight className="w-5 h-5" />
             </Link>
           </div>

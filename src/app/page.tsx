@@ -148,8 +148,8 @@ export default function Home() {
             <Link href="/contact" className="w-full sm:w-auto px-10 py-5 bg-white text-brand-dark font-black rounded-xl hover:bg-brand-accent hover:text-white transition-all shadow-2xl text-lg transform hover:-translate-y-1 active:scale-95">
               Get My Free Quote
             </Link>
-            <Link href="/services" className="w-full sm:w-auto px-10 py-5 bg-transparent border-2 border-white/20 text-white font-black rounded-xl hover:bg-white/10 transition-all text-lg active:scale-95 backdrop-blur-sm">
-              Our Services
+            <Link href="/services/lawn-mowing-service-near-me" className="w-full sm:w-auto px-10 py-5 bg-transparent border-2 border-white/20 text-white font-black rounded-xl hover:bg-white/10 transition-all text-lg active:scale-95 backdrop-blur-sm">
+              Lawn Mowing Near Me
             </Link>
           </div>
         </div>
@@ -236,7 +236,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-5xl font-black text-brand-dark mb-4 tracking-tighter">Simple, Transparent Pricing</h2>
-            <p className="text-lg text-gray-500 font-medium">No contracts required. Pay after every service via secure Yardbook invoice.</p>
+            <p className="text-lg text-gray-500 font-medium max-w-2xl mx-auto">No contracts required. Pay after every service via secure Yardbook invoice. <Link href="/services/lawn-mowing-service-near-me" className="text-brand-mid font-bold hover:underline">Looking for a premium lawn mowing service near me?</Link></p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-10 mb-12 mt-10 text-left">
