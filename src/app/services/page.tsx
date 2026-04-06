@@ -39,7 +39,7 @@ const serviceTiers = [
     price: "$65",
     bestFor: "Average residential lots 5,000–10,000 sqft",
     time: "45–60 min",
-    idealFor: "The ideal balance for most Montgomery County homes. Includes full mechanical edging for that razor-sharp look.",
+    idealFor: "Ideal for most Montgomery County homes. Includes full mechanical edging for that razor-sharp look.",
     features: ["Everything in Basic", "Full mechanical edging (walkways & beds)", "Driveway & sidewalk blowdown", "Tall Fescue health optimization"],
     popular: true
   },
@@ -141,10 +141,10 @@ export default function ServicesPage() {
                   </div>
                 )}
                 <h3 className="text-2xl font-black text-brand-dark mb-2 tracking-tight">{service.title}</h3>
-                <div className="flex items-baseline gap-1 mb-6">
+                <div className="flex items-baseline gap-2 mb-6 flex-wrap">
                   <span className="text-gray-400 text-sm font-bold uppercase tracking-wider">Starting at</span>
                   <span className="text-5xl font-black text-brand-mid">{service.price}</span>
-                  <span className="text-gray-400 text-xs font-bold uppercase tracking-widest ml-1">/ Visit</span>
+                  <span className="text-gray-400 text-xs font-bold uppercase tracking-widest">&nbsp;/ Visit</span>
                 </div>
                 
                 <div className="bg-gray-50 border border-gray-100 p-5 rounded-2xl mb-8 space-y-3 text-sm">

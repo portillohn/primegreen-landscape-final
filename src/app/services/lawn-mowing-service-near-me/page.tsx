@@ -145,7 +145,7 @@ export default function LawnMowingNearMePage() {
       <section className="relative bg-brand-bg pt-24 md:pt-32 lg:pt-40 pb-16 md:pb-24 border-b border-gray-200">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className="flex justify-center mb-6">
-            <Breadcrumbs items={[
+            <Breadcrumbs dark={false} items={[
               { label: "Services", href: "/services" },
               { label: "Lawn Mowing Service Near Me", href: "/services/lawn-mowing-service-near-me" }
             ]} />

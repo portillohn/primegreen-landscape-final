@@ -6,7 +6,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { siteConfig } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "About Prime Green Landscape LLC | Montgomery County, MD",
   description: "Learn why Prime Green Landscape LLC is Montgomery County's trusted choice for precise, reliable, and professional residential lawn mowing.",
   openGraph: {
     images: [{
@@ -224,10 +224,10 @@ export default function AboutPage() {
       </section>
 
       {/* GLOBAL CTA */}
-      <section className="bg-brand-dark py-16">
-        <div className="max-w-4xl mx-auto px-4 text-center">
+      <section className="bg-brand-dark py-20 md:py-28">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-6">Ready to work with true professionals?</h2>
-          <Link href="/contact" className="inline-block px-8 py-4 bg-white text-brand-dark font-bold rounded-md hover:bg-gray-100 transition-colors shadow-lg">
+          <Link href="/contact" className="inline-block px-8 py-4 bg-white text-brand-dark font-bold rounded-xl hover:bg-brand-accent hover:text-white transition-all shadow-lg">
             Get Your Free Quote
           </Link>
         </div>

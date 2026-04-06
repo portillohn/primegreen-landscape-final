@@ -113,7 +113,7 @@ export default function MulchingPage() {
 
       {/* 2. Benefits Grid */}
       <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-12">
             {benefits.map((b, i) => (
               <div key={i} className="text-center group">
@@ -130,7 +130,7 @@ export default function MulchingPage() {
 
       {/* 3. The Process */}
       <section className="py-24 bg-brand-bg border-y border-gray-100">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="text-left">
               <h2 className="text-3xl md:text-5xl font-black text-brand-dark mb-8 leading-tight tracking-tighter italic underline decoration-brand-accent underline-offset-8">Our Mulching Protocol</h2>
@@ -161,14 +161,14 @@ export default function MulchingPage() {
 
       {/* 4. Local Areas */}
       <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="mb-16">
             <h2 className="text-3xl md:text-5xl font-black text-brand-dark mb-6 tracking-tight text-center">Serving These Communities</h2>
             <p className="text-lg text-gray-600 font-medium max-w-2xl mx-auto italic">Professional mulching and bed maintenance for homes in:</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {["Montgomery Village", "Gaithersburg", "Rockville", "Germantown", "Bethesda", "Silver Spring"].map((city) => (
-              <Link key={city} href={`/areas/${city.toLowerCase().replace(" ", "-")}`} className="bg-brand-bg p-8 rounded-2xl border border-gray-100 hover:border-brand-accent hover:bg-white transition-all flex items-center justify-between group shadow-sm hover:shadow-xl">
+              <Link key={city} href={`/areas/${city.toLowerCase().replaceAll(" ", "-")}`} className="bg-brand-bg p-8 rounded-2xl border border-gray-100 hover:border-brand-accent hover:bg-white transition-all flex items-center justify-between group shadow-sm hover:shadow-xl">
                 <span className="font-black text-brand-dark text-lg group-hover:text-brand-accent">{city}, MD</span>
                 <ChevronRight className="w-5 h-5 text-gray-300 group-hover:text-brand-accent transition-all" />
               </Link>
@@ -191,7 +191,7 @@ export default function MulchingPage() {
       {/* 6. Final CTA */}
       <section className="bg-brand-dark py-32 text-center text-white relative overflow-hidden">
         <div className="absolute bottom-0 left-0 w-full h-1 bg-brand-accent" />
-        <div className="text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tighter leading-tight">Ready to Refresh Your <br className="hidden md:block" /> Garden Beds?</h2>
           <p className="text-xl text-gray-400 mb-12 font-light max-w-2xl mx-auto italic">Quotes delivered in under 2 hours. Free Estimates.</p>
           <Link href="/contact" className="inline-block bg-white text-brand-dark px-12 py-6 rounded-xl font-black hover:bg-brand-accent hover:text-white transition-all shadow-2xl text-xl transform hover:scale-105 active:scale-95">

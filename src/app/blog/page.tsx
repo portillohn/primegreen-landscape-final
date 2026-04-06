@@ -7,7 +7,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { siteConfig } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: "Lawn Care Blog",
+  title: "Lawn Care Tips & Advice | Montgomery County, MD Blog",
   description: "Expert lawn care tips, mowing advice, and landscaping guides for homeowners in Montgomery County, Maryland.",
   openGraph: {
     images: [{

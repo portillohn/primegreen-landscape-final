@@ -140,7 +140,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             </div>
             
             <div className="max-w-4xl mx-auto px-4 w-full">
-              <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight max-w-3xl">
+              <h1 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight max-w-3xl">
                 {post.title}
               </h1>
               <div className="flex flex-wrap items-center gap-6 text-gray-200 text-sm font-medium">
@@ -164,7 +164,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         </div>
 
         {/* Post Content */}
-        <div className="max-w-3xl mx-auto px-4 py-16">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 py-16">
           <div className="prose prose-lg prose-gray text-gray-700 font-normal">
             {parseContent(post.content)}
           </div>
@@ -211,10 +211,10 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             Experience the push mower difference. Join hundreds of Montgomery County homeowners who trust Prime Green with their curb appeal.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/contact" className="inline-block px-10 py-5 bg-brand-accent text-white font-extrabold rounded-md hover:bg-white hover:text-brand-dark transition-all shadow-xl text-lg uppercase tracking-tighter">
+            <Link href="/contact" className="inline-block px-10 py-5 bg-brand-accent text-white font-extrabold rounded-xl hover:bg-white hover:text-brand-dark transition-all shadow-xl text-lg uppercase tracking-tighter">
               Get Your Free Quote →
             </Link>
-            <Link href="/services" className="inline-block px-10 py-5 bg-transparent border-2 border-white/20 text-white font-extrabold rounded-md hover:bg-white/10 transition-all text-lg uppercase tracking-tighter">
+            <Link href="/services" className="inline-block px-10 py-5 bg-transparent border-2 border-white/20 text-white font-extrabold rounded-xl hover:bg-white/10 transition-all text-lg uppercase tracking-tighter">
               View Service Tiers
             </Link>
           </div>

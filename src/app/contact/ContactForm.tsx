@@ -214,10 +214,11 @@ export default function ContactForm() {
             </button>
 
             {/* Trust */}
-            <div className="flex justify-center gap-6 pt-1">
+            <div className="flex justify-center items-center gap-2 pt-1 flex-wrap">
               <span className="text-xs text-gray-400">
                 🔒 Private — no spam ever
               </span>
+              <span className="text-gray-300 text-xs" aria-hidden="true">·</span>
               <span className="text-xs text-gray-400">
                 ⚡ Response within 2 hours
               </span>

@@ -283,7 +283,7 @@ export default function CityAreaPage({ params }: { params: { city: string } }) {
 
       {/* 5. Pricing Overview (Simplified from Home) */}
       <section className="py-24 bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-black text-brand-dark mb-6">Service Area Pricing</h2>
             <p className="text-lg text-gray-600 font-medium italic">Starting at $45/visit in {cityData.name}</p>
@@ -351,7 +351,7 @@ export default function CityAreaPage({ params }: { params: { city: string } }) {
 
       {/* 7. FAQ Section */}
       <section className="py-24 bg-gray-50 border-y border-gray-100">
-        <div className="max-w-4xl mx-auto px-4">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-black text-brand-dark mb-6 tracking-tighter">Locals Ask, We Answer</h2>
             <p className="text-lg text-gray-600 font-medium italic">Common questions from our {cityData.name} residential clients.</p>
